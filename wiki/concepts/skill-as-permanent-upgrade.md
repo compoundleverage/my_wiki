@@ -6,8 +6,10 @@ tags: [llm-architecture, agent-design]
 sources:
   - "[[garry-tan-thin-harness-fat-skills]]"
   - ../../raw/garry-tan-thin-harness-fat-skills.md
+  - "[[journal-2026-04-18]]"
+  - ../../raw/journal/2026-04-18.md
 created: 2026-04-18
-last_updated: 2026-04-18
+last_updated: 2026-04-19
 status: stable
 ---
 
@@ -74,6 +76,7 @@ Event 后跑 `/improve` skill：
 - [[skill-as-method-call]]：永久的单元
 - [[diarization]]：典型的可永久化动作
 - [[goal-driven-execution]]：goal = "被问第二次 = 失败"是强成功标准
+- [[compound-interest-tool]]：本概念在**个人日常行动层**的同构——用户 2026-04-18 日记首次明言的"每天产出一个对自己有复利的工具 / 日拱一卒"
 
 ## 与 Karpathy "persistent compounding artifact" 的血缘
 

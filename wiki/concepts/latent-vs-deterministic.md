@@ -6,8 +6,10 @@ tags: [llm-architecture, agent-design, core]
 sources:
   - "[[garry-tan-thin-harness-fat-skills]]"
   - ../../raw/garry-tan-thin-harness-fat-skills.md
+  - "[[journal-2026-04-18]]"
+  - ../../raw/journal/2026-04-18.md
 created: 2026-04-18
-last_updated: 2026-04-18
+last_updated: 2026-04-19
 status: stable
 ---
 
@@ -43,6 +45,14 @@ Agent 系统的每一步要么是 **latent**（潜空间，智能在此），要
 [[yc]] 的 [[skill-as-method-call|matching skill]] 就是混合的例子：
 - LLM 发明主题（latent：读 founder profile 判断谁跟谁聊得来）
 - 算法分配座位（deterministic：约束满足）
+
+## 用户的内化（2026-04-18）
+
+本 wiki 维护者在 [[journal-2026-04-18]] §经验 的自创 [[ai-six-properties|AI 六特性]] 框架中，第 3 条直接嵌入本概念的术语：
+
+> "3. 产出稳定，latent vs deterministic"
+
+这是**外部概念被吸收进第一方框架**的信号——不是单纯 cite 或引用，而是把术语作为自己归纳 AI 能力时的原词。[[garry-tan|Tan]] 的论断在用户个人框架中因此有了锚点。对本概念的含义：不只是 Tan 的一家之言，也是读完 Tan 后会自然抽象出来的稳定分界。
 
 ## 边界与反例
 

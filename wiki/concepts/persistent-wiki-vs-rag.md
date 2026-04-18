@@ -6,8 +6,10 @@ tags: [llm-architecture, knowledge-base, core]
 sources:
   - "[[karpathy-llm-wiki-gist]]"
   - ../../raw/karpathy-llm-wiki-gist.md
+  - "[[journal-2026-04-18]]"
+  - ../../raw/journal/2026-04-18.md
 created: 2026-04-18
-last_updated: 2026-04-18
+last_updated: 2026-04-19
 status: stable
 ---
 
@@ -39,6 +41,29 @@ Karpathy 的核心论证：**"Nothing is built up"**（RAG 侧）vs **"Knowledge
 - Wiki 把综合 **一次性固化下来**——cross-reference 已建，contradictions 已标，synthesis 已写
 - 下次 query 只需**读已有的 synthesis**，而非重现它
 
+## 扩张性 Open Question
+
+> [!question] 来自用户 2026-04-18 日记（见 [[journal-2026-04-18]] §问题）
+> 1. 随着 wiki 体量变大，是否 RAG 做 Query 更好？
+> 2. 目前这么小体量，感觉 [[notebooklm|NotebookLM]] 处理数据快很多，之后会不会越来越慢？
+
+**这不是与本页结论的冲突，是对其边界的合理压力测试**——Karpathy 论证的是"长期积累 + 反复深化"场景下 wiki 必赢；用户观察的是"小 / 新体量时 RAG 体感更快"。两者不矛盾，前者讲**长期积累极限**，后者讲**冷启动体感**。
+
+### 本页已有的理论回应
+
+- Karpathy 实测 ~100 sources / ~数百页用 index.md 即可——见 [关键对比 § 规模瓶颈](#关键对比)
+- 超百万页时仍需 BM25+vector 辅助（[[qmd]]）；**但底层仍是结构化 wiki，不是 flat chunk**——见 [边界与反例](#边界与反例)
+
+### 实证缺口（待补）
+
+- [UNVERIFIED] [[my-wiki]] 当前体量（~30 wiki pages）下 /query 的真实响应时间
+- [UNVERIFIED] [[notebooklm|NotebookLM]] 小 vs 大文档集的响应曲线
+- [UNVERIFIED] 本 wiki 增长到多少 sources 时应引入 BM25+vector 辅助层
+
+### 后续动作
+
+待 [[my-wiki]] 体量增长后做实测对比，回填本节。
+
 ## 与 [[diarization]] 的关系
 
 Diarization 是**单次**的"读全集写一页档案"动作。Persistent wiki 是 diarization 的**全局化 + 累积版**：
@@ -68,6 +93,7 @@ Wiki 是 knowledge-compilation 范式的**产物形态**。[[knowledge-compilati
 - [[diarization]]：wiki 每页都是一次 diarization
 - [[resolver-context-routing]]：wiki 的 index.md 是原生 resolver（Karpathy 直说）
 - [[skill-as-permanent-upgrade]]：[[garry-tan|Tan]] 把"compounding artifact"概念推到 skill 层
+- [[compound-interest-tool]]：compound 隐喻被进一步下推到**个人每日实践层**的同构（用户 2026-04-18 日记的核心原则）
 
 ## 参考来源
 

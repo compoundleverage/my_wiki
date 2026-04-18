@@ -1,6 +1,6 @@
 # Knowledge Wiki Index
 
-Last rebuild: 2026-04-18
+Last rebuild: 2026-04-19
 
 个人知识库的全局导航。任何严肃的 `/query` 都从这里开始。
 
@@ -21,6 +21,9 @@ Last rebuild: 2026-04-18
 - [[vannevar-bush]] · 1945 Memex 提出者，Karpathy 致敬的前辈 · #historical #pioneer
 - [[qmd]] · tobi 的本地 markdown 搜索引擎（BM25+向量+LLM rerank） · #tool #search
 - [[tolkien-gateway]] · 托尔金 fan wiki，Karpathy 用作 wiki 规模参照 · #example
+- [[my-wiki]] · 本 wiki 仓库（compoundleverage/my_wiki）；[[compound-interest-tool]] 的首日实例 · #project #personal
+- [[hermes-agent]] · 本 wiki 维护者明日学习目标（stub） · #learning-target #stub
+- [[notebooklm]] · Google RAG 产品；[[persistent-wiki-vs-rag]] 扩张性实测对照基线 · #product #google #rag
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -40,6 +43,8 @@ Last rebuild: 2026-04-18
 - [[skill-as-permanent-upgrade]] · 每个 skill 是永不衰减的资产，system compounds · #llm-architecture
 - [[persistent-wiki-vs-rag]] · Karpathy 核心论证：wiki 编译一次持续维护 vs RAG 现场重拼 · #knowledge-base #core
 - [[knowledge-compilation]] · "知识即代码库"——Obsidian/LLM/wiki = IDE/programmer/codebase · #knowledge-base #core
+- [[compound-interest-tool]] · 每天产出一个对自己有复利的工具；"日拱一卒"（本 wiki 维护者原则） · #principle #personal #core
+- [[ai-six-properties]] · 本 wiki 维护者自创的 AI 能力框架 v1（draft） · #user-framework #ai-capabilities
 
 ## Sources
 <!-- raw/ 下的原始资料，由 /ingest 自动维护 -->
@@ -47,6 +52,7 @@ Last rebuild: 2026-04-18
 - [[karpathy-skills-claude-md]] · forrestchang 的 LLM 编码行为准则（4 原则） · #coding-guidelines
 - [[garry-tan-thin-harness-fat-skills]] · Garry Tan 架构论长文：2x vs 100x 差在架构不在模型 · #llm-architecture
 - [[karpathy-llm-wiki-gist]] · 本 wiki 项目的直接灵感源（终于 ingest） · #foundational
+- [[journal-2026-04-18]] · my_wiki Day 1 日记：完工 + 扩张性疑问 + AI 六特性起源 · #journal #milestone
 
 ## Events
 <!-- 时间相关条目（可选） -->
