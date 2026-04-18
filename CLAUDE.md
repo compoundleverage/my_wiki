@@ -8,11 +8,15 @@
 
 ## 三层硬边界
 
-- **`raw/`** — 只读真相层（Immutable Source of Truth）
-  - 你可以 Read，**绝不能** Write / Edit raw/ 下任何文件
-  - 只有用户才能修改 raw/
+- **`raw/`** — 真相层（Source of Truth，**内容不可变**）
+  - 你**绝不能 Edit** 已存在的 raw/ 文件（避免改写历史语料）
+  - 在用户明确授权下（例如 `/clip <url>` 或 `/ingest <url>` 的 URL 前置抓取），可以 Write **新文件**到 raw/，必须：
+    - 带 frontmatter：`source_url`, `fetched_at`, `fetch_method`（`author`, `platform` 按需）
+    - 内容为抓取到的 **verbatim 原文**，不得混入 AI 总结
+    - 不得覆盖已存在文件（冲突时追加日期后缀或让用户决定）
   - 一切结论最终必须能回溯到 raw/ 下的某个文件
-- **`wiki/`** — 由你持续维护的编译层。所有写入都在这里
+  - 溯源锚的底线是"**内容不可变**"——Karpathy 原文是 "reads from them but **never modifies them**"（见 [[karpathy-llm-wiki-gist]] §Architecture），而非禁止字节写入
+- **`wiki/`** — 由你持续维护的编译层。所有 wiki 内容的写入都在这里
 - **`index.md` + `log.md`** — 两个导航系统。每次写操作必须同步更新它们
 
 ## 四个主工作流

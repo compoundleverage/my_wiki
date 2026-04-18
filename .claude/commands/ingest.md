@@ -1,17 +1,28 @@
 # /ingest
 
-把 `raw/` 下的一篇资料吸收进 wiki，触发连锁更新（1 source → 10~15 个节点变动）。
+把 `raw/` 下的一篇资料（或一个 URL）吸收进 wiki，触发连锁更新（1 source → 10~15 个节点变动）。
 
-**用法**：`/ingest raw/<file>`
-**参数**：`$ARGUMENTS` = 文件相对路径
+**用法**：
+- `/ingest raw/<file>` — 已在 raw/ 下的文件
+- `/ingest <https://...>` — URL，自动调用 `/clip` 前置抓取
+
+**参数**：`$ARGUMENTS` = 文件相对路径 **或** URL
 
 ---
 
 ## 执行步骤
 
-### 1. 入库校验
+### 1. 入库校验 / URL 前置抓取
 
-- 确认 `$ARGUMENTS` 路径在 `raw/` 下。**若不在 raw/，拒绝执行**，提示用户先把文件放进 raw/
+若 `$ARGUMENTS` 以 `http://` 或 `https://` 开头：
+
+- 调用 `/clip $ARGUMENTS` 把 URL 存到 `raw/<auto-slug>.md`（见 `.claude/commands/clip.md`）
+- 把返回的 `raw/<slug>.md` 作为后续步骤的实际 `<file>`
+- 若 /clip 失败（BLOCKED）→ 本 /ingest 也 BLOCKED，提示用户
+
+否则（本地路径）：
+
+- 确认 `$ARGUMENTS` 路径在 `raw/` 下。**若不在 raw/，拒绝执行**，提示用户
 - 用 Glob 或 Bash `ls` 确认文件存在
 
 ### 2. 深读与对齐

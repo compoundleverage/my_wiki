@@ -35,12 +35,33 @@
 - 无任何入链 → orphan
 - index.md 里的链接算入链
 
-### 4. Missing cross-references
+### 4. Missing cross-references / Dangling wikilinks
 
-启发式检测：
+**两类问题必须分开对待**：
+
+#### 4a. 缺互链（页面**存在**，但被纯文本提及）
+
 - 对每个概念页标题，Grep 它在其他页面的出现
-- 若作为纯文本出现但未写成 `[[]]` → 缺链
+- 若作为纯文本出现但未写成 `[[]]` → 候选缺链
 - 高频共现但无互链的概念 / 实体对 → 列出
+
+#### 4b. Dangling wikilinks（链接指向**不存在**的页面）
+
+- 收集所有 `[[<name>]]` 的唯一 name 集合
+- 对每个 name：Glob 检查 `wiki/**/*.md` 是否存在对应文件
+- 不存在 → dangling
+
+**对每个 dangling，产出三路候选解法**，**不得**机械推荐"建新页"：
+
+| 情况 | 解法 |
+|------|------|
+| 已有页已覆盖此概念 | **重定向** `[[target\|display]]` → `[[existing-page\|display]]` |
+| 已有页部分覆盖 | **扩写**该页的相关 section，删 dangling 引用 |
+| 完全新概念，已有页无法扩写 | **建新页** |
+
+**硬约束**：报告里 dangling 每条必须附**候选覆盖页**（若有），让人判断取舍。不要一看见 dangling 就写"建议新建"。
+
+参考案例：[[obsidian-as-ide-redirect]]（2026-04-18 首次 lint 的 dangling 处理决策）。
 
 ### 5. Data gaps
 
@@ -75,15 +96,24 @@ status: stable
 ## Orphan pages (N)
 - [[page-z]]
 
-## Missing cross-references (N)
+## Missing cross-references / Dangling wikilinks
+
+### 缺互链 (N1) — 页面存在但纯文本提及
 - [[page-a]] ↔ [[page-b]]（共现 N 次，未互链）
+
+### Dangling wikilinks (N2) — 链接指向不存在的页面
+- `[[target-x]]`：N 处引用；**候选覆盖页**：[[existing-y]]（差不多覆盖 / 部分覆盖 / 无）
+  - 推荐解法：重定向 / 扩写 / 建页
+  - 需人工判断，**不自动建页**
 
 ## Data gaps (N)
 - [[page-c]] sources 为空
 - index.md `## Events` 分区为空
 
-## 建议新建的页面
-- <concept>：频繁被提及但无独立页
+## 建议新建的页面（仅当 dangling + 无覆盖候选 + 确属新概念）
+- <concept>：N 处 dangling 引用；已有页无法覆盖；建议新建
+
+**注意**：不得把所有"频繁被提及但无独立页"一概推荐建页——见 §4b 三路解法，默认应先查重定向 / 扩写。
 
 ## 建议合并 / 拆分
 - [[page-d]] 过长，建议拆为 …
