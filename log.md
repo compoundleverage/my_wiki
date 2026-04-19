@@ -92,3 +92,23 @@ verb ∈ `ingest | query | lint | file-back | init | refactor`
 - 关键改动: (1) 装 `pipx install yt-dlp` v2026.3.17（brew 走 ghcr.io 被网络拦改用 pipx）+ `pipx inject yt-dlp certifi` 解决 macOS pipx venv 缺 CA bundle 导致的 SSL 验证失败；(2) 实测 yt-dlp 配方成功——`--proxy http://127.0.0.1:7890 --cookies-from-browser chrome --skip-download --ignore-no-formats-error --write-subs --write-auto-subs --sub-langs 'en,zh.*,en-US' --convert-subs srt`，三种字幕（en + zh-Hans + zh-Hant）齐下 ~800KB；(3) 关键诊断洞察——markitdown 0.1.5 失败的真因不是"YouTube 解析行业短板"（之前 memory 错判），而是缺 cookies 支持；YouTube `/api/timedtext` 现在拒裸请求；同时验证 markitdown 加显式 `HTTPS_PROXY` env 重测仍同样失败，说明 cookies 才是瓶颈、proxy 是次要因素；(4) clip.md 5 处修订：fetch priority 5 级 → 6 级（YouTube 单独成第 2 级、markitdown 下推到第 3 级）、新增 yt-dlp 命令模板 + 前置一次性安装 + 字幕去重交 ingest 的例外约定 + proxy 端口约定、frontmatter `fetch_method` enum 加 `yt-dlp`、§设计原则补 yt-dlp verbatim 边界 + markitdown YouTube 移除注释；(5) memory 重写：`youtube-parsing-limitation.md` type 从 feedback → reference，内容从"行业短板悲观判断" → 工具配方 + 认知校准（前一次 memory 错在哪）
 - 后续动作: 字幕去重 helper 待写（首次真 ingest YouTube 时实现并固化到 ingest.md）；下次有 PDF/DOCX 时补 markitdown 那侧 smoke test（仍欠）；考虑把 proxy/SSL 这类 macOS pipx + 中国大陆环境坑做一条 reference memory，避免装新 Python 工具时重踩
 
+## [2026-04-20] ingest | journal-2026-04-19（第 2 篇"日记→wiki"连锁）
+- 涉及页面: 新建 wiki/summaries/journal-2026-04-19.md, wiki/entities/{mempalace,screenstudio,clicky}.md；更新 wiki/entities/{my-wiki,hermes-agent,qmd}.md, wiki/concepts/compound-interest-tool.md, index.md
+- 关键改动: 第 5 次 ingest，第 2 篇日记连锁。4 新页（1 summary + 3 entity stub）+ 4 更新 + 2 导航 = **10 处变动，再次正中 Karpathy 10~15 区间下限**。关键发现：(1) [[compound-interest-tool]] 第 2 次第一方背书（"AI 发展正反馈十足 + 每天都可以取得实质性进步" 绑定 "日拱一卒"），证明是稳定底层信念而非一次灵感；(2) [[qmd]] 状态从"未集成"翻转到"已集成（2026-04-19）"——用户主动早于 Karpathy 建议的规模阈值接入，[[compound-interest-tool]] 原则的激进执行实例，22 页规模即接入；(3) [[hermes-agent]] touch-count=2（4-18/4-19 连续 tomorrow-tail），未达 ≥3 升级阈值，按新 TODO 升级规则继续 inline；(4) "AI 陪伴工具"方向成型：[[hermes-agent]]（执行层）+ [[mempalace]]（沉浸感层）两个 building block 建立；(5) "朋友对 terminal 的恐惧"：用户选择暂不抽象 concept，等更多 journal 观察累积（avoid 过早抽象）；(6) touch-count 机制首次试运行：Hermes Agent / Auto Research / Claude Code 4.6 泄漏 / 神经递质四联均 touch=2，机制按预期工作
+- 后续动作: 3 个 stub（mempalace/screenstudio/clicky）待亲测或 `/clip <GitHub README URL>` 后补全；[[qmd]] 实装后累积 10~20 次 /query 反馈做中期评估；若 Hermes Agent / Auto Research / Claude Code 4.6 / 神经递质 / Harness Engineering 任一再出现一次即触发 ≥3 升级 project；可 `/lint` 验证本次连锁完整性
+
+## [2026-04-20] lint | 全库体检（第 2 次日记 ingest 后）
+- 涉及页面: wiki/lint-reports/2026-04-20.md（新建）
+- 关键改动: 0 contradictions / 0 stale / 0 orphans（严格 orphan=0；[[tolkien-gateway]] 仅 index 入链的"弱孤儿"状态延续，非可操作问题）/ 0 empty sources / **1 dangling wikilink** —— `wiki/entities/qmd.md:54` 的 `[[journal-*]]` 是本次 ingest 时写的占位符表述，非合法 wikilink；三路解法指向"改为纯文本"，P1 修法 1 Edit；UNVERIFIED 47（上次 48，-1，稳定），新增 8（mempalace 2 + screenstudio 3 + clicky 3）/ 消减约 9；[[journal-2026-04-19]] 入链 8 页 × 互联健康；上次 lint 的 P1（补反向互链）确认已完结（见 `[2026-04-19] refactor | Lint P1 修复`）
+- 后续动作: **P1 修 §4b `[[journal-*]]` dangling**（qmd.md:54 改纯文本，30s）；方法论记录：.gitignore 激进私有化后 Grep 工具无法穿透，lint 扫描全部改用 Bash + rg --no-ignore，建议把此约定写入 lint.md §工具约定小节；占位符 wikilink（`[[journal-*]]`）是 ingest 新陷阱，下次写"未来某篇"时应显式用纯文本
+
+## [2026-04-20] refactor | Lint P1 修复：占位符 wikilink
+- 涉及页面: wiki/entities/qmd.md
+- 关键改动: `wiki/entities/qmd.md:54` `[[journal-*]]` → `未来某篇 journal（届时回填具体日期）`（1 Edit）；dangling 归零
+- 后续动作: 下次 /lint 应验证 dangling = 0；考虑把"lint 必须用 rg --no-ignore 绕过 .gitignore"和"禁用占位符 wikilink（如 [[journal-*]]）"两条约定写入 .claude/commands/lint.md（当前仅 lint-report §10 方法论记录，未固化到命令规范）
+
+## [2026-04-20] refactor | lint.md 固化两条约定（§0 工具约定）
+- 涉及页面: .claude/commands/lint.md
+- 关键改动: 新增 §0 工具约定小节——§0A "`Bash + rg --no-ignore` 绕过 .gitignore"（附 Conflict / wikilink targets / last_updated / UNVERIFIED 四条示范命令，说明 Grep 工具在 .gitignore 激进私有化后不可用的根因与影响）+ §0B "占位符 wikilink 禁令"（`[[journal-*]]` 等 glob 伪装 wikilink 改为纯文本，首次踩坑引用 qmd.md:54）；§4b Dangling 区新增一条硬约束"占位符识别直接走改纯文本一路，不走三路解法"；把 2026-04-20 lint 方法论记录升级为命令规范
+- 后续动作: 下次 /lint 应完整按 §0 执行；若 .gitignore 未来调整（公开 wiki 内容），§0A 可撤销；§0B 永久保留
+

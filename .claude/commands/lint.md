@@ -7,6 +7,50 @@
 
 ---
 
+## 0. 工具约定（2026-04-20 追加）
+
+### 0A. `Bash + rg --no-ignore` 绕过 `.gitignore`
+
+`.gitignore` 已把 wiki 内容层（`wiki/summaries/` / `entities/` / `concepts/` / `syntheses/` / `decisions/` / `raw/journal/`）全部 ignore（"激进私有化"，见 git commit `10b8b70`，2026-04-19）。ripgrep 默认遵守 `.gitignore`，而 Claude Code 的 `Grep` 工具**无 `--no-ignore` 参数**：
+
+- 用 `Grep` 工具扫 wiki → **扫不到 wiki 主体 → lint 结果全面错误**（误报整库孤儿、漏报所有 dangling、Conflict callout 全部看不到）
+- **本命令下所有扫描示例中的 `Grep ...`，执行时必须替换为 `Bash + rg --no-ignore ...`**
+
+示范命令：
+
+```bash
+# Conflict + 待验证
+rg --no-ignore -n '\[!warning\] Conflict|待验证' wiki/ log.md
+
+# 所有 wikilink targets（去重）——用于 dangling 统计
+rg --no-ignore -oN '\[\[[^\]|#]+' wiki/ | sed 's/^.*\[\[//' | sort -u
+
+# Frontmatter last_updated
+rg --no-ignore -n '^last_updated:' wiki/
+
+# UNVERIFIED 计数
+rg --no-ignore -c 'UNVERIFIED' wiki/
+```
+
+若未来 `.gitignore` 调整（例如公开 wiki 内容），本约定可撤销。
+
+### 0B. 占位符 wikilink 禁令
+
+禁止在 wiki 内写 `[[journal-*]]` / `[[project-*]]` 等 glob 伪装 wikilink——它们既非合法 target 也非模板占位，会伪装成合法 wikilink 通过 lint，但 Obsidian 实际无法解析。
+
+"未来某篇 / 某事件" 的引用 **必须用纯文本**：
+
+```diff
+- [[journal-*]] 做一次中期评估
++ 未来某篇 journal（届时回填具体日期）做一次中期评估
+```
+
+真正要 wikilink 时再回填具体 target。
+
+首次踩坑：2026-04-20 lint §4b，`wiki/entities/qmd.md:54`（本次 /ingest 疏忽产生）。
+
+---
+
 ## 五维度扫描
 
 ### 1. Contradictions（跨页矛盾）
@@ -61,7 +105,11 @@
 
 **硬约束**：报告里 dangling 每条必须附**候选覆盖页**（若有），让人判断取舍。不要一看见 dangling 就写"建议新建"。
 
-参考案例：[[obsidian-as-ide-redirect]]（2026-04-18 首次 lint 的 dangling 处理决策）。
+**另一条硬约束（占位符识别）**：若 dangling target 形如 `journal-*` / `project-*` / `page-*` 等 glob 伪装写法，**直接归为"改为纯文本"一路**（见 §0B 占位符 wikilink 禁令），不走重定向/扩写/建页三路。
+
+参考案例：
+- [[obsidian-as-ide-redirect]]（2026-04-18 首次 lint 的 dangling 处理决策，三路解法起源）
+- 2026-04-20 lint `[[journal-*]]` → 纯文本（占位符识别首例）
 
 ### 5. Data gaps
 

@@ -1,6 +1,6 @@
 # Knowledge Wiki Index
 
-Last rebuild: 2026-04-19
+Last rebuild: 2026-04-20
 
 个人知识库的全局导航。任何严肃的 `/query` 都从这里开始。
 
@@ -24,6 +24,9 @@ Last rebuild: 2026-04-19
 - [[my-wiki]] · 本 wiki 仓库（compoundleverage/my_wiki）；[[compound-interest-tool]] 的首日实例 · #project #personal
 - [[hermes-agent]] · 本 wiki 维护者明日学习目标（stub） · #learning-target #stub
 - [[notebooklm]] · Google RAG 产品；[[persistent-wiki-vs-rag]] 扩张性实测对照基线 · #product #google #rag
+- [[mempalace]] · GitHub 工具（stub）；[[hermes-agent]] 的"AI 陪伴工具"沉浸感层候选 · #tool #stub
+- [[screenstudio]] · GitHub 工具（stub）；与 [[clicky]] 教学软件组合候选 · #tool #stub
+- [[clicky]] · GitHub 工具（stub）；farzaa 作，与 [[screenstudio]] 组合候选 · #tool #stub
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -53,6 +56,7 @@ Last rebuild: 2026-04-19
 - [[garry-tan-thin-harness-fat-skills]] · Garry Tan 架构论长文：2x vs 100x 差在架构不在模型 · #llm-architecture
 - [[karpathy-llm-wiki-gist]] · 本 wiki 项目的直接灵感源（终于 ingest） · #foundational
 - [[journal-2026-04-18]] · my_wiki Day 1 日记：完工 + 扩张性疑问 + AI 六特性起源 · #journal #milestone
+- [[journal-2026-04-19]] · my_wiki Day 2 日记：MarkitDown + QMD 实装 + 3 工具热榜发现 + 复利原则第 2 次背书 · #journal #milestone
 
 ## Events
 <!-- 时间相关条目（可选） -->
