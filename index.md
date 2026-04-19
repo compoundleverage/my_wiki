@@ -64,3 +64,7 @@ Last rebuild: 2026-04-19
 <!-- ADR 风格的决策记录 -->
 
 - [[obsidian-as-ide-redirect]] · 2026-04-18 决定不单建 obsidian-as-ide 页，重定向到 [[knowledge-compilation]] · #decision #wiki-governance
+
+## Projects
+<!-- 前瞻性：active / paused / done 的多日项目；升级自 raw/journal/ 里 touch-count ≥ 3 的 TODO -->
+

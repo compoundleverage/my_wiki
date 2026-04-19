@@ -8,14 +8,16 @@
 
 ## 三层硬边界
 
-- **`raw/`** — 真相层（Source of Truth，**内容不可变**）
-  - 你**绝不能 Edit** 已存在的 raw/ 文件（避免改写历史语料）
-  - 在用户明确授权下（例如 `/clip <url>` 或 `/ingest <url>` 的 URL 前置抓取），可以 Write **新文件**到 raw/，必须：
-    - 带 frontmatter：`source_url`, `fetched_at`, `fetch_method`（`author`, `platform` 按需）
-    - 内容为抓取到的 **verbatim 原文**，不得混入 AI 总结
-    - 不得覆盖已存在文件（冲突时追加日期后缀或让用户决定）
+- **`raw/`** — 真相层（Source of Truth）。分两种子类型，规则不同：
+  - **Ingested raw**（`raw/*.md` 除 `journal/`）：外部源，**严格不可变**
+    - 绝不能 Edit 已存在的文件
+    - 授权下（`/clip <url>` / `/ingest <url>`）可 Write **新文件**：frontmatter 带 `source_url` / `fetched_at` / `fetch_method`；内容 verbatim；不覆盖已存在
+  - **Authored raw**（`raw/journal/`）：用户自己的第一方写作，**允许有限 mutation**
+    - ✅ 可：勾 `- [x]`（进度 marker）、修错别字 / 标点、补漏字
+    - ❌ 禁：事后改 substance（"那天我的想法不是这样"）——破坏 time-truth 溯源
+    - 理由：Karpathy "reads from them but never modifies them" 针对的是**摄取的外部源**；journal 是自生原材料，进度状态本就需要更新
   - 一切结论最终必须能回溯到 raw/ 下的某个文件
-  - 溯源锚的底线是"**内容不可变**"——Karpathy 原文是 "reads from them but **never modifies them**"（见 [[karpathy-llm-wiki-gist]] §Architecture），而非禁止字节写入
+  - 溯源锚的底线是"**不可事后重写 substance**"——字节可增（勾箱、补字），但 substance 不可回塑
 - **`wiki/`** — 由你持续维护的编译层。所有 wiki 内容的写入都在这里
 - **`index.md` + `log.md`** — 两个导航系统。每次写操作必须同步更新它们
 
@@ -35,7 +37,7 @@
 ```yaml
 ---
 title: 页面标题
-type: concept | entity | summary | decision | comparison | synthesis
+type: concept | entity | summary | decision | comparison | synthesis | project
 aliases: []              # 中文别名 / 同义词，供 index.md 做模糊映射
 tags: []                 # #tag 形式
 sources:                 # 追溯链：至少一条
@@ -46,6 +48,63 @@ last_updated: YYYY-MM-DD
 status: draft | stable | deprecated
 ---
 ```
+
+**`type: project` 额外字段**（现有 6 种 type 都是回顾性；project 是前瞻性，需要状态追踪）：
+
+```yaml
+---
+type: project
+status: active | paused | done        # project 的 status 值域；其他 type 仍用 draft/stable/deprecated
+next_action: <一句话：下一步具体做什么>
+deadline: YYYY-MM-DD                  # 可选
+started: YYYY-MM-DD                   # 建立日
+sources:
+  - "[[journal-YYYY-MM-DD]]"          # 最初出现的 journal
+---
+```
+
+## TODO / 笔记 升级规则
+
+**两层架构**，不是三层：
+
+- **Inline（默认 ~95%）**：所有 TODO / 笔记 / 想法 / 提问在 `raw/journal/YYYY-MM-DD.md` 里
+- **升级到 `wiki/projects/`（~5%）**：仅当下述任一触发命中
+
+### Metadata 原则
+
+不用 Obsidian Tasks 的 emoji 语法（`📅` `⏫` `🛫`）——违反 File-over-App，grep-hostile。用 Dataview 风格 inline field：
+
+```markdown
+- [ ] 学 Hermes Agent [due:: 2026-04-25] [priority:: high]
+```
+
+三层 metadata 粒度：
+
+- **日级**：journal frontmatter（`fetched_at` / `weather` / `focus`）
+- **任务级**：`- [ ]` 那行的 inline field
+- **项目级**：子页面 `wiki/projects/*.md` with `type: project`
+
+**子页面不是 metadata 的必要条件**——90%+ 场景 inline field 够。
+
+### 升级触发（满足任一即升级）
+
+1. **Touch-count ≥ 3**：同一 TODO 出现在 3+ 个 journal 文件。`grep -l "xxx" raw/journal/*.md | wc -l ≥ 3` → 说明在手动滚动 = 真的重要
+2. **语义升级**：变成 concept / decision / synthesis / comparison → 用对应 type，不是 project
+3. **Rich metadata**：需要 status 历史 / sub-tasks / 链接网
+4. **跨上下文复用**：多个 wiki 页要引用它
+
+时间阈值（"超过 3 天"）对"快但老忘"的任务失效。touch-count 才是真信号。
+
+### 升级动作
+
+升级到 `wiki/projects/<slug>.md`：
+
+1. 建新文件，frontmatter 用 `type: project` 模板（见上节 Frontmatter Schema）
+2. 在各 journal 里把 inline TODO 换成 `[[<slug>]]` wikilink
+3. index.md `## Projects` 分区加一行
+4. log.md append `refactor | 升级 <slug> 到 project 页`
+
+**无 slash command**——频率 <5 次/周，手动 Edit 够。频率上去了再讨论 `/promote`。
 
 ## 链接格式（完全 Obsidian 兼容）
 
@@ -75,7 +134,7 @@ status: draft | stable | deprecated
 
 ## `index.md` 结构
 
-四个固定分区：`## Entities` / `## Concepts` / `## Sources` / `## Events`。每条：
+六个固定分区：`## Entities` / `## Concepts` / `## Sources` / `## Events` / `## Decisions` / `## Projects`。每条：
 
 ```markdown
 - [[page-name]] · 一句话摘要 · #tag1 #tag2

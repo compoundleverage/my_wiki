@@ -1,0 +1,10 @@
+filters:
+  and:
+    - file.folder.startsWith("raw/journal")
+views:
+  - type: table
+    name: 列表视图
+    order:
+      - file.name
+      - fetched_at
+      - file.mtime
