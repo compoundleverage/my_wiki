@@ -72,6 +72,11 @@ verb ∈ `ingest | query | lint | file-back | init | refactor`
 - 关键改动: 两页"相关概念"节各补一行 [[compound-interest-tool]] 反向链接；skill-as-permanent-upgrade.md frontmatter 追加 journal-2026-04-18 为 source + 更新 last_updated=2026-04-19；**三层同构链（个人 / 知识 / 架构）现在双向闭合**，本次 ingest 实际连锁 = 10 + 2 = 12 处（仍在 10~15 区间）
 - 后续动作: 下次 /lint 应验证 §4a 缺反向互链 = 0
 
+## [2026-04-19] refactor | 项目改名 my_wiki + 集成 markitdown / QMD（Phase 1，本会话内非破坏部分）
+- 涉及页面: CLAUDE.md, .claude/commands/{clip,ingest,query}.md
+- 关键改动: (1) CLAUDE.md H1 标题 `# 个人 LLM Wiki — 首席维护者` → `# my_wiki`（line 3 角色描述未动，"首席维护者"用词后续可再清理）；(2) clip.md fetch priority 表新增 markitdown 作为第 2 级——YouTube URL / 直接指向 .pdf .docx .pptx .xlsx .epub 等结构化二进制 URL 优先走 markitdown，pushed WebFetch / gstack-browse / user-paste 各下一级；frontmatter `fetch_method` enum 加 `markitdown`；§设计原则补 markitdown verbatim 边界说明；(3) ingest.md 新增 §1.5 二进制→MD 边车前置——raw/ 下若是 .pdf .docx .pptx 等，先 markitdown 转 .md sidecar（带 derived_from / derived_via / derived_at frontmatter），后续 §2 Read 走 .md，原始二进制保留作底证；(4) query.md §1 锚定步骤拆为 §1a QMD 混合检索（`qmd query --files --json`）+ §1b index.md/aliases 锚定 + §1c 合并去重——QMD 抓语义关联，index.md 抓显式实体，QMD 失败优雅降级
+- 后续动作: 待用户确认 Phase 2 destructive ops（mv `llm_wiki` → `my_wiki` + mv Claude 项目记忆目录）；Phase 3 新会话内 `pipx install 'markitdown[all]'` + `bun install -g @tobilu/qmd` + `qmd collection add ./wiki --name wiki && qmd embed` + 端到端 smoke test；CLAUDE.md line 3 "首席维护者"措辞按用户偏好后续再清理
+
 ## [2026-04-19] refactor | TODO/Calendar/Metadata 架构决策 + 基础设施
 - 涉及页面: CLAUDE.md, .obsidian/daily-notes.json, wiki/templates/daily-note.md（新）, wiki/bases/journal-calendar.base（新）, index.md
 - 关键改动: 按 `~/.claude/plans/calendar-elegant-sonnet.md` 执行——(1) CLAUDE.md 加 "TODO / 笔记 升级规则"（两层架构 + touch-count 触发 + Dataview inline field）；(2) raw/ 拆 Ingested raw（严格不可变）vs Authored raw（journal 允许勾箱/修错别字但禁 substance 重写）；(3) frontmatter schema 加 `type: project` 含 status/next_action/deadline/started；(4) Calendar 用内置 Bases 不装社区插件；(5) index.md 加 ## Projects 分区（当前为空）；(6) 新建 daily-note 模板 + journal-calendar.base

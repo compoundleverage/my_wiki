@@ -9,11 +9,32 @@
 
 ## 执行步骤
 
-### 1. 锚定索引
+### 1. 锚定候选集
+
+候选集 = QMD 混合检索结果 ∪ index.md/aliases 命中。两条腿走路：QMD 抓语义关联，index.md 抓显式实体/别名。
+
+#### 1a. QMD 混合检索（语义 + 词频 + LLM rerank）
+
+```bash
+qmd query "<question>" --files --json --min-score 0.3 -n 15
+```
+
+- 输出：相关度 ≥ 0.3 的文件路径 + 分数（最多 15 条）
+- 强项：问题缺明显关键词、跨概念语义关联、口语化提问
+- **前置**：本地 QMD 索引已建（首次：`qmd collection add ./wiki --name wiki && qmd embed`）；wiki 大改后跑 `qmd embed` 增量更新
+- 失败时（qmd 未安装 / exit ≠ 0 / 结果空）：跳过本子步，单走 §1b，不阻塞 /query
+
+#### 1b. index.md / aliases 锚定
 
 - Read `index.md`
-- 按分类 + aliases 圈出候选页面集合（通常 5~15 个）
+- 按分类 + aliases 圈出候选页面集合
 - 辅以 Grep：`Grep <关键词> wiki/**/*.md --output-mode files_with_matches`
+- 强项：问题含明确实体名 / 用户惯用别名 / 显式 wikilink 引用
+
+#### 1c. 合并去重
+
+- §1a ∪ §1b 去重，通常 5~15 个候选
+- QMD 高分（> 0.6）但 index.md 漏掉的页 → 可能 index.md 缺索引，记入"后续动作：补 index.md 条目"
 
 ### 2. 下钻阅读
 

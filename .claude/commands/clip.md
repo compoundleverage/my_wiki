@@ -17,6 +17,8 @@
 - **绝不**修改已存在的 raw/ 文件
 - 失败时失败显式，不静默截断
 
+**关于 markitdown 的 verbatim 边界**：markitdown 是结构化转码（YouTube 转写 / PDF / DOCX / PPTX 等 → Markdown），输出非字节级 verbatim，但属于"无编辑性转录"——只做格式转换，不增删 substance。本工具视其输出为 verbatim，不做后续修改。frontmatter 标注 `fetch_method: markitdown` 留审计痕。
+
 ## 与 CLAUDE.md raw/ 规则的关系（Gap-2 说明）
 
 当前 CLAUDE.md 写 "AI 绝不能 Write / Edit raw/"——**字面上 /clip 违反此规则**。本工具在用户授权下 Write 新文件到 raw/，并用以下 skill-level 护栏保证源头纯洁性：
@@ -39,16 +41,25 @@ Gap-2 正式决议（是否改 CLAUDE.md 让文字与行为一致）待后续独
 
 ### 2. 抓取（fetch priority，依次尝试直到成功）
 
-优先级顺序经测试定；第 4 级永不失败（用户粘贴）。
+优先级顺序经测试定；第 5 级永不失败（用户粘贴）。
 
 | 级 | 方式 | 适用 |
 |----|------|------|
 | 1 | 识别 GitHub gist / repo URL → `gh gist view <id>` 或 `curl` 到 raw URL | GitHub 内容，最干净 |
-| 2 | WebFetch | 静态 HTML / 公开文档 / PDF |
-| 3 | `$B goto <url>` + `$B text` 提取正文（gstack browse 渲染 JS） | SPA、复杂前端 |
-| 4 | AskUserQuestion 请用户粘贴 | 登录墙 / 反爬 / 纯图片 |
+| 2 | `markitdown <url> > raw/<slug>.md` | YouTube URL / 直接指向 `.pdf` `.docx` `.pptx` `.xlsx` `.epub` 等结构化二进制的 URL |
+| 3 | WebFetch | 静态 HTML / 公开文档 |
+| 4 | `$B goto <url>` + `$B text` 提取正文（gstack browse 渲染 JS） | SPA、复杂前端 |
+| 5 | AskUserQuestion 请用户粘贴 | 登录墙 / 反爬 / 纯图片 |
 
 每级失败时必须打印失败原因再降级，不静默切换。
+
+**第 2 级触发条件**（match 任一即用 markitdown，不进 WebFetch）：
+
+- URL host ∈ `youtube.com` / `youtu.be` / `m.youtube.com`
+- URL path 以 `.pdf` / `.docx` / `.pptx` / `.xlsx` / `.xls` / `.epub` / `.mp3` / `.wav` 结尾
+- 或用户在 `$ARGUMENTS` 显式加 `--via=markitdown`
+
+markitdown 失败时（exit code ≠ 0）打印 stderr 再降级到第 3 级。
 
 ### 3. 自动 slug（未指定时）
 
@@ -70,7 +81,7 @@ source_url: <原始 URL>
 fetched_at: <today YYYY-MM-DD>
 author: <已知作者，未知用 [UNKNOWN]>
 platform: <github-gist | github-repo | x.com | web | ...>
-fetch_method: <gh-cli | curl | webfetch | gstack-browse | user-paste>
+fetch_method: <gh-cli | markitdown | curl | webfetch | gstack-browse | user-paste>
 note: <可选 1 行备注，如 "原文 verbatim，仅 frontmatter 为元数据">
 ---
 ```

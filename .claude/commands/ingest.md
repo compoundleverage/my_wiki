@@ -25,6 +25,28 @@
 - 确认 `$ARGUMENTS` 路径在 `raw/` 下。**若不在 raw/，拒绝执行**，提示用户
 - 用 Glob 或 Bash `ls` 确认文件存在
 
+### 1.5. 二进制 → MD 边车（若适用）
+
+若 `<file>` 扩展名 ∈ `.pdf .docx .pptx .xlsx .xls .epub .mp3 .wav`（Read 工具读不动或受页限制的格式）：
+
+- Bash: `markitdown raw/<file>.<ext> > raw/<file>.md`
+- 后续 §2 Read 走新生成的 `raw/<file>.md`；原始二进制保留作底证（不删）
+- 在 `raw/<file>.md` 顶部追加边车 frontmatter：
+
+  ```yaml
+  ---
+  derived_from: <file>.<ext>
+  derived_via: markitdown
+  derived_at: <today YYYY-MM-DD>
+  source_url: <若是 /clip 链路传入则继承，否则 self>
+  ---
+  ```
+
+- markitdown 失败时（exit code ≠ 0）→ 打印 stderr 后停止；**不降级回 Read**（PDF Read 有页限制、DOCX/PPTX 完全读不动，结果不可信）
+- 若 sidecar `.md` 已存在 → 跳过转换（幂等）
+
+若 `<file>` 已是 `.md` 或 `.txt`：跳过本步直接进 §2。
+
 ### 2. 深读与对齐
 
 - 用 Read 读全文（PDF / Markdown 都支持；PDF 超过 10 页要分批）
