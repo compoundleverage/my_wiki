@@ -17,7 +17,9 @@
 - **绝不**修改已存在的 raw/ 文件
 - 失败时失败显式，不静默截断
 
-**关于 markitdown 的 verbatim 边界**：markitdown 是结构化转码（YouTube 转写 / PDF / DOCX / PPTX 等 → Markdown），输出非字节级 verbatim，但属于"无编辑性转录"——只做格式转换，不增删 substance。本工具视其输出为 verbatim，不做后续修改。frontmatter 标注 `fetch_method: markitdown` 留审计痕。
+**关于 markitdown 的 verbatim 边界**：markitdown 是结构化转码（PDF / DOCX / PPTX 等 → Markdown），输出非字节级 verbatim，但属于"无编辑性转录"——只做格式转换，不增删 substance。本工具视其输出为 verbatim，不做后续修改。frontmatter 标注 `fetch_method: markitdown` 留审计痕。**注**：YouTube 字幕已从 markitdown 路径移除（实测 0.1.5 缺 cookies 支持，YouTube `/api/timedtext` 拒裸请求 → 拿到 footer HTML），改走 yt-dlp（见 §2 第 2 级）。
+
+**关于 yt-dlp 的 verbatim 边界**：yt-dlp 输出 YouTube 字幕原始 .srt（手动 + auto-generated 多语言）。auto-generated caption 是 rolling 格式（每帧累积重复），**clip.md 阶段视 .srt 为 verbatim 底证、不去重**；去重交给 /ingest 派生 .md sidecar。frontmatter 标注 `fetch_method: yt-dlp`。
 
 ## 与 CLAUDE.md raw/ 规则的关系（Gap-2 说明）
 
@@ -41,25 +43,62 @@ Gap-2 正式决议（是否改 CLAUDE.md 让文字与行为一致）待后续独
 
 ### 2. 抓取（fetch priority，依次尝试直到成功）
 
-优先级顺序经测试定；第 5 级永不失败（用户粘贴）。
+优先级顺序经测试定；第 6 级永不失败（用户粘贴）。
 
 | 级 | 方式 | 适用 |
 |----|------|------|
 | 1 | 识别 GitHub gist / repo URL → `gh gist view <id>` 或 `curl` 到 raw URL | GitHub 内容，最干净 |
-| 2 | `markitdown <url> > raw/<slug>.md` | YouTube URL / 直接指向 `.pdf` `.docx` `.pptx` `.xlsx` `.epub` 等结构化二进制的 URL |
-| 3 | WebFetch | 静态 HTML / 公开文档 |
-| 4 | `$B goto <url>` + `$B text` 提取正文（gstack browse 渲染 JS） | SPA、复杂前端 |
-| 5 | AskUserQuestion 请用户粘贴 | 登录墙 / 反爬 / 纯图片 |
+| 2 | `yt-dlp ...`（cookies + proxy + 字幕，详见下方） | YouTube 视频字幕 |
+| 3 | `markitdown <url> > raw/<slug>.md` | 指向 `.pdf` `.docx` `.pptx` `.xlsx` `.epub` 等结构化二进制的 URL |
+| 4 | WebFetch | 静态 HTML / 公开文档 |
+| 5 | `$B goto <url>` + `$B text` 提取正文（gstack browse 渲染 JS） | SPA、复杂前端 |
+| 6 | AskUserQuestion 请用户粘贴 | 登录墙 / 反爬 / 纯图片 |
 
 每级失败时必须打印失败原因再降级，不静默切换。
 
-**第 2 级触发条件**（match 任一即用 markitdown，不进 WebFetch）：
+**第 2 级触发条件**（match 即用 yt-dlp）：
 
 - URL host ∈ `youtube.com` / `youtu.be` / `m.youtube.com`
+
+**前置一次性安装**（首次跑前）：
+
+```bash
+pipx install yt-dlp
+pipx inject yt-dlp certifi   # macOS pipx venv 缺 CA bundle，否则 SSL 验证失败
+```
+
+**命令模板**（slug 由 §3 生成）：
+
+```bash
+cd raw && yt-dlp \
+  --proxy http://127.0.0.1:7890 \
+  --cookies-from-browser chrome \
+  --skip-download --ignore-no-formats-error \
+  --write-subs --write-auto-subs \
+  --sub-langs 'en,zh.*,en-US' \
+  --convert-subs srt \
+  -o "<slug>.%(ext)s" \
+  <youtube-url>
+```
+
+输出多个 `raw/<slug>.<lang>.srt`（每语言一个）。
+
+**例外约定**：clip.md 通常承诺 "1 raw = 1 .md"，YouTube 例外——多语言字幕作为多个 .srt 进 raw/，并写一个 `raw/<slug>.md` index 文件含 frontmatter + `subtitle_files: [<slug>.en.srt, ...]` 字段。CLAUDE.md "raw/*.md" 规则的字面冲突已在 Gap-2 决议范围内（与 markitdown 二进制 sidecar 同性质）。
+
+**字幕去重**：YouTube auto-caption 是 rolling 格式（每帧累积重复），clip.md **不**做去重；保留 .srt verbatim 作底证，去重交给 /ingest 派生 .md sidecar。去重 helper 暂未写——首次真 ingest YouTube 时实现并固化到 `.claude/commands/ingest.md`。
+
+**proxy 端口**：模板写死 7890（用户 Clash 默认）。端口不同时从 `env | grep https_proxy` 取代。
+
+**前置依赖**：依赖系统级 HTTP/HTTPS proxy 在 `https_proxy` env 中（中国大陆环境必需）；用户 Chrome 已登录 YouTube（cookies 取自 chrome keychain）。
+
+yt-dlp 失败时（exit code ≠ 0）打印 stderr 再降级到第 4 级（webfetch 视频页 HTML 仅拿 metadata，无 transcript）。
+
+**第 3 级触发条件**（match 任一即用 markitdown，不进 WebFetch）：
+
 - URL path 以 `.pdf` / `.docx` / `.pptx` / `.xlsx` / `.xls` / `.epub` / `.mp3` / `.wav` 结尾
 - 或用户在 `$ARGUMENTS` 显式加 `--via=markitdown`
 
-markitdown 失败时（exit code ≠ 0）打印 stderr 再降级到第 3 级。
+markitdown 失败时（exit code ≠ 0）打印 stderr 再降级到第 4 级。
 
 ### 3. 自动 slug（未指定时）
 
@@ -81,7 +120,7 @@ source_url: <原始 URL>
 fetched_at: <today YYYY-MM-DD>
 author: <已知作者，未知用 [UNKNOWN]>
 platform: <github-gist | github-repo | x.com | web | ...>
-fetch_method: <gh-cli | markitdown | curl | webfetch | gstack-browse | user-paste>
+fetch_method: <gh-cli | yt-dlp | markitdown | curl | webfetch | gstack-browse | user-paste>
 note: <可选 1 行备注，如 "原文 verbatim，仅 frontmatter 为元数据">
 ---
 ```
