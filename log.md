@@ -81,3 +81,9 @@ verb ∈ `ingest | query | lint | file-back | init | refactor`
 - 涉及页面: CLAUDE.md, .obsidian/daily-notes.json, wiki/templates/daily-note.md（新）, wiki/bases/journal-calendar.base（新）, index.md
 - 关键改动: 按 `~/.claude/plans/calendar-elegant-sonnet.md` 执行——(1) CLAUDE.md 加 "TODO / 笔记 升级规则"（两层架构 + touch-count 触发 + Dataview inline field）；(2) raw/ 拆 Ingested raw（严格不可变）vs Authored raw（journal 允许勾箱/修错别字但禁 substance 重写）；(3) frontmatter schema 加 `type: project` 含 status/next_action/deadline/started；(4) Calendar 用内置 Bases 不装社区插件；(5) index.md 加 ## Projects 分区（当前为空）；(6) 新建 daily-note 模板 + journal-calendar.base
 - 后续动作: 用户在 Obsidian 确认 Settings → Core plugins → Daily Notes 已指向 raw/journal/ + format=YYYY-MM-DD + template=wiki/templates/daily-note；确认 Obsidian ≥ 1.9 能打开 .base 文件；首个 TODO 升级发生时 dogfood touch-count 工作流
+
+## [2026-04-19] refactor | markitdown / QMD 集成（Phase 3 — 装 + 验证）
+- 涉及页面: log.md, ~/.claude/projects/-Users-liutong-Admin-Journey-to-AI-my-wiki/{MEMORY.md, memory/youtube-parsing-limitation.md}（新）
+- 关键改动: (1) `pipx install markitdown[all]` ✅ v0.1.5；(2) `bun install -g @tobilu/qmd` ❌ node-llama-cpp tarball IntegrityCheckFailed → 改 `npm install -g @tobilu/qmd` ✅ v0.9.0；(3) 清理 bun 残留 `~/.bun/bin/qmd` symlink + `~/node_modules/`（266MB 失败装的依赖摊在用户家根目录，bun 全局 store 异常行为）；(4) `qmd collection add ./wiki --name wiki` indexed 40 → `qmd embed` 68 chunks / 5s（首次下 embeddinggemma-300M-Q8_0 313MB / 14min）；(5) Smoke tests：`vsearch` ✅ 但 scores 集中 0.56-0.59（embeddinggemma 区分度有限）；`query` ✅ **reranker 加持后质变**——top hit `obsidian-as-ide-redirect.md` 0.91 vs #2 0.50（gap 0.41，reranker 真识别相关性），首次需下 `qmd-query-expansion-1.7B-q4_k_m` 1.2GB；markitdown PDF/DOCX 推迟（用户决定有真实文档时再测）；markitdown YouTube ❌ 实测拿到 footer HTML（cookie 墙），用户认知锚定后已记 memory
+- 后续动作: clip.md §第 2 级触发条件需修正——YouTube 不应进 markitdown 优先路径（实测失败率高），降级到第 3 级或加显式 caveat；`/query` 命令实际执行时优先用 `qmd query --files`（reranker 加持），`vsearch` 仅作 fallback；下次有 PDF/DOCX 时补 markitdown 那侧 smoke test
+
