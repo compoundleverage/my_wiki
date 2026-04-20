@@ -1,6 +1,6 @@
 # Knowledge Wiki Index
 
-Last rebuild: 2026-04-21
+Last rebuild: 2026-04-21 (Day 4)
 
 个人知识库的全局导航。任何严肃的 `/query` 都从这里开始。
 
@@ -29,6 +29,7 @@ Last rebuild: 2026-04-21
 - [[mempalace]] · GitHub 工具（stub）；[[hermes-agent]] 的"AI 陪伴工具"沉浸感层候选 · #tool #stub
 - [[screenstudio]] · GitHub 工具（stub）；与 [[clicky]] 教学软件组合候选 · #tool #stub
 - [[clicky]] · GitHub 工具（stub）；farzaa 作，与 [[screenstudio]] 组合候选 · #tool #stub
+- [[review-dot-plugin]] · 本 wiki 维护者自研 Obsidian 插件（v0.2.0，~54 行 JS）；三态圆点 fresh/stale/ok + 一键 `Cmd+Shift+R` mark-reviewed · #tool #plugin #self-authored
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -71,6 +72,7 @@ Last rebuild: 2026-04-21
 - [[karpathy-llm-wiki-gist]] · 本 wiki 项目的直接灵感源（终于 ingest） · #foundational
 - [[journal-2026-04-18]] · my_wiki Day 1 日记：完工 + 扩张性疑问 + AI 六特性起源 · #journal #milestone
 - [[journal-2026-04-19]] · my_wiki Day 2 日记：MarkitDown + QMD 实装 + 3 工具热榜发现 + 复利原则第 2 次背书 · #journal #milestone
+- [[journal-2026-04-20]] · my_wiki Day 3 日记：review-dot 插件原型（痛点→落地 24h 内）+ Harvard 四激素学习 + 用户独立到达"asked twice = failed"原则 · #journal #milestone #plugin-authoring
 - [[feel-good-hormones-series]] · Harvard Health 四+一篇：dopamine / serotonin / endorphins / oxytocin 全景 · #neuroscience #wellness
 - [[dopamine-fasting-grinspoon]] · Grinspoon MD 2020：dopamine fasting 科学辟谣 + 温和 CBT 版本的认知锚 · #debunking #wellness-critique
 - [[five-action-steps-quitting-addiction]] · Harvard 2021：5 步戒瘾公式（药物 / 酒精 / 行为三类通用） · #addiction #framework
