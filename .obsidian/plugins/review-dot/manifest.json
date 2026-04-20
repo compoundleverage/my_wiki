@@ -1,0 +1,9 @@
+{
+  "id": "review-dot",
+  "name": "Review Dot",
+  "version": "0.2.0",
+  "minAppVersion": "1.4.0",
+  "description": "Tag File Explorer items with data-review attribute based on last_reviewed vs last_updated frontmatter dates. Includes a 'Mark reviewed' command (default hotkey Cmd/Ctrl+Shift+R) that stamps last_reviewed = today. Paired with a CSS snippet to render review-state dots.",
+  "author": "my_wiki",
+  "isDesktopOnly": false
+}

@@ -38,16 +38,42 @@
 ---
 title: 页面标题
 type: concept | entity | summary | decision | comparison | synthesis | project
-aliases: []              # 中文别名 / 同义词，供 index.md 做模糊映射
-tags: []                 # #tag 形式
-sources:                 # 追溯链：至少一条
+aliases: []                    # 中文别名 / 同义词，供 index.md 做模糊映射
+tags: [tag1, tag2]             # YAML flow list，逗号分隔，不带 #（Obsidian 自动加 #）
+sources:                       # 追溯链：至少一条
   - raw/some-paper.pdf
   - "[[related-concept]]"
 created: YYYY-MM-DD
-last_updated: YYYY-MM-DD
-status: draft | stable | deprecated
+last_updated: YYYY-MM-DD          # 内容任何实质更新都要刷这个
+status: draft | stable | deprecated   # 内容成熟度（作者自评）
+last_reviewed: YYYY-MM-DD | null      # 人类最后一次 review 这页的日期；null = 从未 review
 ---
 ```
+
+**两个正交字段，分别回答两个不同问题**：
+
+| 字段 | 回答的问题 | 谁填 | 取值 |
+|------|-----------|------|------|
+| `status` | 内容成熟度——这页靠不靠谱？能不能链？ | AI 或用户自评 | `draft` / `stable` / `deprecated` |
+| `last_reviewed` | 人类最后一次 review 是什么时候？和 `last_updated` 对比即得 review 新鲜度 | 用户手动填（review 当天） | `YYYY-MM-DD` / `null` |
+
+**为什么分开**：一页可以 content-stable 但 unreviewed（AI 刚写完，Harvard 源头靠谱，但你没看过）；也可以 content-draft 但 reviewed（用户写的粗笔记，自评不成熟但自己知道写的啥）。复用一个字段会强迫你**牺牲内容自评去换 review 信号**——不值。
+
+**为什么 `last_reviewed` 用日期不用布尔**：
+- 日期和 `last_updated` 直接可比——插件做一次字符串比较即得"review 之后有没有更新过"三态（从未 review / review 后有更新 / review 且 current）
+- 即使插件没了，`grep 'last_reviewed:' wiki/` 还能告诉你每页最后 review 是哪天——file-over-app 更硬
+- 未来想做 "超过 N 天未 review" 提醒时直接可用
+
+**工作流约束**：
+
+- AI 生成（`/ingest` / `/file-back`）新页 → `last_reviewed: null`（强制）；`status` 按 AI 自评
+- 用户 review 完 → 改 `last_reviewed: <今天日期>`；`status` 用户按需调整。两种改法：(a) 打开页面按默认热键 `Cmd/Ctrl + Shift + R`（Review Dot 插件的 "Mark current file as reviewed" 命令，自动改 frontmatter，热键可在 Settings → Hotkeys 重绑）；(b) 直接手动编辑 frontmatter
+- 增量更新已存在页（`/ingest` 追加内容）→ `last_updated` 刷为今天；**`last_reviewed` 保持原值**（review 过的 last_reviewed < 新 last_updated → 自动进入 stale 态 → 黄点提醒 re-review）
+- 冲突 / 过时 → `status: deprecated`；`last_reviewed` 不变
+
+**Obsidian 端呈现**：`.obsidian/plugins/review-dot/` 自研极简插件读 frontmatter `last_reviewed` vs `last_updated` 算出三态并写 `data-review` 属性，同时提供 "Mark current file as reviewed" 命令（默认热键 `Cmd/Ctrl + Shift + R`）一键把当前页的 `last_reviewed` 改为今天；`.obsidian/snippets/draft-indicator.css` 用 CSS 渲染点（fresh = 🔵 / stale = 🟡 / ok = 无）。不依赖 Supercharged Links 等重插件。
+
+**tags 格式注意**：YAML flow list 语法 `[a, b, c]`，**不带 `#`**（`#` 在 YAML 里是注释符，会导致 `[` 不闭合，整个 frontmatter 被拒绝）。Obsidian 读 `tags:` 时自动加 `#` 前缀。
 
 **`type: project` 额外字段**（现有 6 种 type 都是回顾性；project 是前瞻性，需要状态追踪）：
 

@@ -71,17 +71,32 @@
 
 - **`wiki/summaries/<source-slug>.md`** — 新建摘要页
   - slug = 文件名去扩展 + kebab-case
-  - frontmatter: `type: summary`，`sources: ["../raw/<原始路径>"]`
+  - frontmatter: `type: summary`，`sources: ["../raw/<原始路径>"]`，**`last_reviewed: null`** + `status` 按 AI 自评（权威源通常 `stable`，草稿起手 `draft`）
   - 正文结构：
     1. 核心论点（3 条以内）
     2. 关键证据
     3. 与 wiki 已有结论的联系 / 冲突
 - **`wiki/entities/*.md`** — 源文涉及的每个人 / 组织 / 项目 / 产品
-  - 已存在：Edit 增量添加新信息，更新 `last_updated`，frontmatter `sources` 追加
-  - 不存在：Write 新建
+  - 已存在：Edit 增量添加新信息，刷新 `last_updated`，frontmatter `sources` 追加；**`last_reviewed` 保持原值**（若原先已 review 过且今天有更新 → last_reviewed < last_updated → 插件自动 stale 黄点提醒重 review）
+  - 不存在：Write 新建，**`last_reviewed: null`** + `status` 按自评
 - **`wiki/concepts/*.md`** — 源文涉及的每个核心概念
-  - 已存在：增量合并。**冲突走 `> [!warning] Conflict` 规则**（见 CLAUDE.md）
-  - 不存在：新建
+  - 已存在：增量合并。**冲突走 `> [!warning] Conflict` 规则**（见 CLAUDE.md）；`last_updated` 刷今天，**`last_reviewed` 保持原值**
+  - 不存在：新建，**`last_reviewed: null`** + `status` 按自评
+
+**frontmatter 规则汇总**：
+
+| 场景 | `last_reviewed` | `last_updated` | `status` |
+|------|-----------------|----------------|----------|
+| AI 生成新页 | `null`（必填） | 今天 | AI 自评：权威源→`stable`，草稿→`draft` |
+| 增量更新已存在页 | **保持原值**（无论原值是日期还是 null） | 今天 | **保持原值** |
+| 发现内容过时 | 不变 | 今天 | → `deprecated` |
+| 用户亲自 review 完 | 用户手改为今天日期 | 不变 | 用户按需调整 |
+
+**两字段语义**：`last_reviewed` 是人类 review 时间戳（AI 不可代为填日期）；`status` 是内容成熟度自评。详见 CLAUDE.md frontmatter schema § `last_reviewed` vs `status`。
+
+**tags 写法硬约束**：`tags: [a, b, c]` 逗号分隔，**不带 `#`**（`#` 在 YAML 是注释符，带 `#` 会导致 `[` 不闭合、整个 frontmatter 被 Obsidian 拒绝）。
+
+**Obsidian 端**：`.obsidian/plugins/review-dot/`（自研 ~54 行插件）+ `.obsidian/snippets/draft-indicator.css` 联合实现三态 dot：fresh 🔵 / stale 🟡 / ok 无。不依赖 Supercharged Links。
 
 **连锁硬约束**：若最终只写了 1 个 summary 而没触发其他页面变动，必须在 log.md `关键改动` 字段明示理由。
 

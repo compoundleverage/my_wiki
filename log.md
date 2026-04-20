@@ -112,3 +112,73 @@ verb ∈ `ingest | query | lint | file-back | init | refactor`
 - 关键改动: 新增 §0 工具约定小节——§0A "`Bash + rg --no-ignore` 绕过 .gitignore"（附 Conflict / wikilink targets / last_updated / UNVERIFIED 四条示范命令，说明 Grep 工具在 .gitignore 激进私有化后不可用的根因与影响）+ §0B "占位符 wikilink 禁令"（`[[journal-*]]` 等 glob 伪装 wikilink 改为纯文本，首次踩坑引用 qmd.md:54）；§4b Dangling 区新增一条硬约束"占位符识别直接走改纯文本一路，不走三路解法"；把 2026-04-20 lint 方法论记录升级为命令规范
 - 后续动作: 下次 /lint 应完整按 §0 执行；若 .gitignore 未来调整（公开 wiki 内容），§0A 可撤销；§0B 永久保留
 
+
+## [2026-04-20] clip | feel-good-hormones Harvard 5 篇
+- 涉及页面: raw/{feel-good-hormones-how-they-affect-your-mind-mood-and-body, dopamine-the-pathway-to-pleasure, serotonin-the-natural-mood-booster, endorphins-the-brains-natural-pain-reliever, oxytocin-the-love-hormone}.md（5 新）
+- 关键改动: 1 次 /ingest 批量 clip 5 个 URL（主文 + 4 子链接）；全部 fetch_method=webfetch；主文 frontmatter `series:` 列出同批 5 个 slug 建立横向关联；4 子文件 frontmatter `series_parent:` 反向指向主文
+- 后续动作: 本次为 /ingest 前置；见下一条 ingest 日志
+
+## [2026-04-20] ingest | Harvard Feel-Good Hormones 系列（首个神经科学主题）
+- 涉及页面: 新建 wiki/summaries/feel-good-hormones-series.md, wiki/concepts/{dopamine,serotonin,endorphins,oxytocin,neurotransmitter,runners-high,exercise-as-hormone-trigger}.md, wiki/comparisons/four-feel-good-hormones.md；更新 index.md
+- 关键改动: **9 新页 + 1 导航 = 10 处变动，落在 Karpathy 10~15 连锁区间**。首次引入神经科学 / wellness 主题区，与现有 AI / 知识工程区独立无冲突；comparison 页直接对应 journal TODO "多巴胺 vs 内啡肽 vs 血清素 vs 催产素"；[[exercise-as-hormone-trigger]] 反向引用 [[compound-interest-tool]]——运动作为"同动作多收益"的身体复利典型，把激素主题和 wiki 现有核心原则打通；反直觉洞察三条（纯蛋白反降 serotonin / oxytocin 正反馈 / endorphin=endogenous morphine 命名机制）落入 summary §三条非显然洞察
+- 后续动作: 用户可勾 journal TODO "多巴胺 vs 内啡肽 vs 血清素 vs 催产素" 为 -[x]（wiki 覆盖后 TODO 满足）；可运行 /lint 扫连锁完整性（预期 dangling=0、9 新页反向引用健康）；未来 Hermes Agent / Auto Research / Claude Code 4.6 泄漏 / Harness Engineering 若再出现一次 journal 即触达 touch-count=3 升级阈值
+
+## [2026-04-20] lint | Run 2（Harvard feel-good hormones ingest 后）
+- 涉及页面: wiki/lint-reports/2026-04-20.md（追加 Run 2 section）
+- 关键改动: 0 矛盾 / 0 stale / 0 孤儿 / 0 新 dangling / 0 data gap；9 新页每页实质入链 ≥4，枢纽（comparison/summary）各 8 入链；Run 1 P1（`[[journal-*]]`）确认已修；UNVERIFIED 从 9 新页引入 = 0
+- 后续动作: 无 P1/P2；clean pass
+
+## [2026-04-20] clip | Harvard dopamine-fasting + quitting-addiction 2 篇
+- 涉及页面: raw/dopamine-fasting-maladaptive-fad.md, raw/five-action-steps-for-quitting-an-addiction.md（2 新）
+- 关键改动: 跟进 dopamine.md 中埋的 2 个外部深挖链接；fetch_method=webfetch；Grinspoon 是哈佛医学院内部医生（科学辟谣源头可信）；5 步戒瘾是 Harvard Health Publishing 官方指南
+- 后续动作: 本次为 /ingest 前置；见下一条 ingest 日志
+
+## [2026-04-20] ingest | dopamine 暗面深挖（辟谣 + 恢复路径）
+- 涉及页面: 新建 wiki/summaries/{dopamine-fasting-grinspoon,five-action-steps-quitting-addiction}.md, wiki/concepts/{dopamine-fasting,addiction-recovery}.md；更新 wiki/concepts/dopamine.md（+辟谣小节 +恢复路径 +2 sources）, index.md（+4 条）
+- 关键改动: **4 新页 + 1 更新 + 1 导航 = 6 处变动**（Karpathy 10~15 区间下端；因主题深度收窄而非广度；深挖本身就是"扩张单一节点"的模式）。关键建构：(1) [[dopamine-fasting]] 辟谣后把"dopamine fast"正名为 Sepah CBT-based 数字排毒，和 [[compound-interest-tool]] 形成**减法复利 vs 加法复利**一对（未独立建页，留作未来主题）；(2) [[addiction-recovery]] 5 步框架显式映射 [[dopamine]] 强化回路的 cue-response-reward 三环节，3 步打断、2 步 meta-cognitive；(3) [[dopamine-fasting]] ↔ [[addiction-recovery]] 定位为"预防版 vs 重建版"——同一回路不同严重度的干预；(4) dopamine.md 现在除了"奖赏-强化"正面，也补上"成瘾暗面 + 辟谣流行误读 + 恢复路径"三侧完整三角
+- 后续动作: 可运行 /lint 扫新 4 页反向互链 + dopamine.md 被重链入度变化；Sepah LinkedIn 原文、DSM-5 行为成瘾诊断边界、Overcoming Addiction Special Health Report 是未来可选深挖节点；用户原可选"环境设计=负复利"独立 concept 页暂跳过，待主题累积到 3 处以上再抽取
+
+## [2026-04-20] refactor | 引入 status:draft review 工作流 + Obsidian 圆点可视化
+- 涉及页面: .obsidian/snippets/draft-indicator.css（新）；CLAUDE.md（+status review 工作流段落）；.claude/commands/ingest.md（§4 status 规则汇总）；13 新页回溯 stable → draft（今日 Harvard 系列 + dopamine 深挖）
+- 关键改动: 新建页默认 `status: draft` 变成硬约束，review 工作流正式固化——人类亲自打开 / 确认 → 改 stable → Obsidian File Explorer 左侧蓝圆点自动消失。依赖：Supercharged Links 社区插件监听 `status` 字段（用户一次性装 + 配置）。`status` 增量更新规则也明确："已存在页保持原值，不回退到 draft"避免 review 过的内容被 /ingest 二次降级。13 页回溯覆盖：9 Harvard feel-good-hormones + 4 dopamine 深挖
+- 后续动作: 用户装 Supercharged Links 插件 + 启用 snippet（具体步骤见 draft-indicator.css 顶部注释）；CLAUDE.md 的 status 段可能还要延伸到 /file-back 命令（当前 ingest.md 已写，file-back.md 待查）；/lint 未来应加一条"检查 stable 页是否所有 wikilink 指向的目标也都 stable"（draft ↔ stable 边界检测，目前是 nice-to-have）
+
+## [2026-04-20] refactor | 拆分 status / reviewed + 修 tags YAML 语法 bug
+- 涉及页面: 13 新页 frontmatter（今日 Harvard 9 + dopamine 深挖 4）；.obsidian/snippets/draft-indicator.css（重写）；CLAUDE.md（frontmatter schema §）；.claude/commands/ingest.md（§4）
+- 关键改动: (1) **Bug 修复** — 13 页 `tags: [#foo #bar]` 是无效 YAML（`#` 是注释符→`[` 不闭合→整个 frontmatter 被 Obsidian 拒绝→作为 body 文本显示，用户截图暴露）。改为 `tags: [foo, bar]` 规范格式，与 `wiki/concepts/think-before-coding.md:5` 现有约定对齐。同步修 `runners-high.md` aliases 里 `runner's high` 的单引号（`"runner's high"` 防御性加双引号）。(2) **字段拆分** — 原先把 `status: draft` 双重语义化（既表示"内容成熟度"又表示"待 review"）是字段挤压错误。拆为两个正交字段：`status` 保留原义（内容成熟度，draft/stable/deprecated），新增 `reviewed: true|false`（人类 review 门控）。13 页回滚到 `status: stable`（Harvard 权威源自评合理）+ `reviewed: false`（等你亲自过目）。(3) **CSS snippet 改目标** — 从 `[data-link-status="draft"]` 改为 `[data-link-reviewed="false"]`；Supercharged Links 配置从 watch `status` 改为 watch `reviewed`。(4) **Spec 固化** — CLAUDE.md 加两字段对比表 + 为什么分开的解释 + tags YAML 硬约束段；ingest.md §4 加 frontmatter 规则汇总表 + tags 禁 `#` 硬约束
+- 后续动作: 用户在 Obsidian 端重装/重配 Supercharged Links（managed attribute 改 `reviewed`）；review 完 13 页后手动改 `reviewed: true`；未来 /ingest / /file-back 的新页会自动带 `reviewed: false`；/file-back.md 可能也需要同步更新 frontmatter 规则（待查）；/lint 未来加一条"unreviewed 页数"作为健康指标（draft 不再是 review 信号，需要另外统计）
+
+## [2026-04-20] refactor | review UX v2：自研最小插件 + last_reviewed 日期字段 + legacy 回溯
+- 涉及页面: .obsidian/plugins/review-dot/{manifest.json,main.js}（新，~54 行）；.obsidian/snippets/draft-indicator.css（重写：三态）；54 wiki .md 页 frontmatter（13 新页 reviewed:false→last_reviewed:null；41 legacy 页 +last_reviewed:2026-04-20）；CLAUDE.md frontmatter schema §；.claude/commands/ingest.md §4
+- 关键改动: (1) **字段 v2** — `reviewed: true/false` 升级为 `last_reviewed: YYYY-MM-DD | null` 日期字段。好处：日期和 last_updated 直接可比，自动生成三态（fresh/stale/ok）无需显式 enum；plugin 消失后 `grep 'last_reviewed:' wiki/` 仍有可读信息；未来"超过 N 天未 review 提醒"可直接用。(2) **放弃 Supercharged Links** — 功能重、95% 能力浪费、配置复杂。改为自研 `review-dot` 插件：~54 行纯 JS，只做一件事（读 frontmatter 两个日期 → 写 data-review 属性），DOM 改由 CSS snippet 画点。总代码量（插件+snippet）< 100 行，全部可审计。(3) **三态** — fresh 🔵（last_reviewed=null）/ stale 🟡（last_reviewed < last_updated）/ ok 无点。/ingest 增量更新已存在页时只刷 last_updated，保持 last_reviewed 不变 → 自动触发 stale 态提醒 re-review，规则简洁。(4) **Legacy 回溯用 Option B** — 用户确认"我确实也 review 过了"，41 个 legacy wiki 页统一加 `last_reviewed: 2026-04-20`；今日 13 新页 `last_reviewed: null` 等待 review。(5) **Spec 固化** — CLAUDE.md 重写 "两个正交字段" 段（加 "为什么用日期不用布尔" 子段）；ingest.md §4 规则表加 `last_updated` 列
+- 后续动作: 用户启用 Obsidian Community plugins 开关 + 启用 Review Dot 插件 + 刷新 CSS snippets 勾选 draft-indicator（三步）；verify：今日 13 新页应现 🔵，41 legacy 页应无点；review 13 新页后手动改 `last_reviewed: 2026-04-20` → 点消失；.claude/commands/file-back.md 需同步（file-back 新建页也应带 last_reviewed: null）——待下次 /file-back 时检查；/lint 未来加"fresh 页数 + stale 页数"健康指标（替代之前考虑的 "unreviewed 页数"）
+
+## [2026-04-21] refactor | Review Dot v0.2.0：一键 mark-reviewed 热键
+- 涉及页面: .obsidian/plugins/review-dot/{main.js,manifest.json}, CLAUDE.md
+- 关键改动: 插件升级 0.1.0 → 0.2.0，新增 "Mark current file as reviewed" 命令（默认热键 `Cmd/Ctrl + Shift + R`）。实现：`this.addCommand` + `app.fileManager.processFrontMatter()` 就地改写 active file 的 `last_reviewed` 为 today（本地时区，非 UTC，避开晚间跨日偏差）；已有 `metadataCache.on('changed')` 监听会自动重算 data-review → 蓝/黄点瞬时消失，无需 UI 刷新。保护栏：无 active md 文件或缺 `last_reviewed` 字段时只弹 Notice 不写文件（避免给 raw/ 或无 frontmatter 页意外加字段）。为什么选热键而非"滑到底自动 review"：scroll 触发会把 review 语义从"人类验证内容"稀释到"DOM 从眼前过一遍"，且短页永远滚不到底 / 开页瞬触发两头都坏；热键保住 intentionality，成本同样一键。CLAUDE.md 工作流约束段落补上两种改法并存（a 热键 / b 手动编辑）
+- 后续动作: 用户在 Obsidian 端 reload 插件（Settings → Community plugins → Review Dot 关→开）或重启 app 让新命令生效；首次触发前可去 Settings → Hotkeys 搜 "Mark current file as reviewed" 确认热键未冲突（Cmd+Shift+R 默认空闲，若被其他插件占用可重绑）；热键在 journal / raw/ 文件上按会走"缺 last_reviewed 字段→Notice 跳过"保护路径，符合 raw/ 不可变约束
+
+## [2026-04-21] clip | hermes-agent-vs-openclaw
+- 涉及页面: raw/hermes-agent-vs-openclaw.md, raw/hermes-agent-vs-openclaw.zh-Hans.srt (+ zh-Hans-zh-Hans, zh-Hant-zh-Hans srt 变体)
+- 关键改动: YouTube 视频（Best Partners TV / 大飞，18:18，2026-04-17 上传）字幕抓取成功（fetch_method=yt-dlp，cookies-from-browser chrome，proxy 7890）。3 个 .srt 作 verbatim 底证（zh-Hans 为 uploader 上传原版，其余是简繁自动翻译变体，内容基本一致）；写一个 .md index 文件汇总元数据与 subtitle_files 清单
+- 后续动作: 继续 /ingest raw/hermes-agent-vs-openclaw.md 进入 Takeaway 对齐 + 连锁扫描
+
+## [2026-04-21] clip | nousresearch-hermes-agent-readme + openclaw-openclaw-readme
+- 涉及页面: raw/nousresearch-hermes-agent-readme.md, raw/openclaw-openclaw-readme.md
+- 关键改动: 官方 README 两份各自抓成 raw/ 文件（curl raw.githubusercontent.com，verbatim；fetch_method=curl）。目的：对 2026-04-17 最佳拍档视频 /ingest 的结论做**二次校验**。Hermes v0.9.0 / 194 行；OpenClaw（Peter Steinberger 创建，MIT，Node.js 24 产品）/ 492 行。WebSearch 先定位两个官方仓库 URL
+- 后续动作: 增量 /ingest 两份 README → 修正视频转述不精确处 + 补官方新细节
+
+## [2026-04-21] ingest | Hermes Agent vs OpenClaw（最佳拍档 2026-04-17）
+- 涉及页面: 新建 wiki/summaries/hermes-vs-openclaw.md, wiki/entities/{openclaw,nous-research}.md, wiki/concepts/{procedural-knowledge,tiered-memory-architecture}.md, wiki/syntheses/hermes-openclaw-vs-my-wiki-design.md；更新 wiki/entities/hermes-agent.md（stub → 详细页），wiki/concepts/{thin-harness-fat-skills,skill-as-method-call,skill-as-permanent-upgrade,knowledge-compilation}.md（+ 连锁片段）；导航 index.md（+3 entity +2 concept +1 source +1 synthesis line）
+- 关键改动: 第 4 次正式 /ingest。新建 6 页 + 更新 5 页 + 2 导航 = **13 处变动**，落在 Karpathy 10-15 硬约束内。**关键发现**：raw/garry-tan-thin-harness-fat-skills.md:144 明确写 "I tweeted an instruction I gave to **my OpenClaw**..."—— Tan 本人是 OpenClaw 深度用户，"Tan 的 OpenClaw 规则"就是他给自己 OpenClaw 实例的指令，这条规则的推文发布时间与本次视频（2026-04-17）在同一窗口——视频里"OpenClaw 过去半年定义了赛道"的市场印象由 Tan 使用行为和推文流量侧面印证。Hermes Agent 从 stub 一跃成为 wiki 中细节最丰富的 agent 页之一（~200 行）。建 synthesis 做"Hermes/OpenClaw 运行时 agent vs 本 wiki knowledge base"自反对照：记忆分层、skills 沉淀、身份锚定三项都呈同构——三个独立系统到达相同结构不变量，佐证 Karpathy file-over-app 原理的底层必然性
+- 后续动作: (1) Hermes Agent / OpenClaw 官方源 /ingest 做二次校验（当前仅 1 条二手媒体源，summary status=draft）；(2) EvoMap 抄袭事件原始资料 /ingest；(3) user 亲自 review 6 个新 page 后把 last_reviewed 改今天 → 蓝点消失；(4) /lint 验证新 concept（procedural-knowledge / tiered-memory-architecture）是否被 synthesis + hermes-agent 正确回链
+
+## [2026-04-21] lint | 全库（Hermes/OpenClaw 两次 ingest 后验证连锁）
+- 涉及页面: wiki/lint-reports/2026-04-21.md, wiki/summaries/hermes-vs-openclaw.md（修 1 处 dangling）
+- 关键改动: 两次 /ingest（视频 + 官方 README 二次校验）后全库体检。**整体健康优秀**：0 活跃矛盾 / 0 孤儿 / 1 活跃 dangling（已修）/ 0 stale / 0 data gap / index.md 六分区全满（19 entity + 28 concept + 9 source + 3 event + 1 decision）。**唯一引入的 bug** —— wiki/summaries/hermes-vs-openclaw.md:106 写成 `[[synthesis | hermes-openclaw-vs-my-wiki-design]]`（alias pipe 两侧误加空格 → Obsidian 解析为 target=`synthesis ` + alias=xxx），已就地修为 `[[hermes-openclaw-vs-my-wiki-design|自反对照 synthesis]]`。连锁验证：6 新页形成六边形互引 + 与 4 个已有 concept 跨区连接，密度极高。20+ 处 UNVERIFIED 标记全部是 tracking 结构（非活跃冲突），其中 hermes-vs-openclaw 占 6 条待下次深入 docs/ 子页验证
+- 后续动作: (1) 自反规则固化——下次 /ingest 写 alias wikilink 前自查 "[[target|alias]]" 紧凑无空格；(2) UNVERIFIED 治理方案：想消 hermes-vs-openclaw 的 6 条，可 /ingest docs.hermes-agent.nousresearch.com 子页（security/memory/cron）+ docs.openclaw.ai 子页（gateway/security/sandboxing），把具体参数（1300 token / 60s 轮询 / 5 层安全栈）落地
+
+## [2026-04-21] ingest | Hermes/OpenClaw 官方 README 二次校验
+- 涉及页面: wiki/entities/{hermes-agent,openclaw,nous-research}.md（增量补官方细节 + 修正视频误述 + status draft→stable）；wiki/summaries/hermes-vs-openclaw.md（加"视频 vs 官方交叉校验"13 行对照表 + status draft→stable）；index.md 不变（entity/concept 已列，无新页）
+- 关键改动: 官方源二次校验，发现 **3 处视频表述需修正**：(1) **Gateway 定位** —— 视频称"绝对控制中枢"，官方 README 明说 "the Gateway is just the control plane — the product is the assistant"；Gateway 只是 sessions/channels/tools/events 的 control plane；(2) **OpenClaw 安全评价** —— 视频称"早期争议多权限不受限隔离弱"，官方实际有 DM pairing（陌生人配对码）+ sandbox 架构（Docker/SSH/OpenShell backends + default deny list），准确表述应为"main session 默认全权符合单用户 local-first，non-main 默认 sandbox"；(3) **OpenClaw 工作区文件** —— 视频将 SOUL/AGENTS/USER/TOOLS/HEARTBEAT/MEMORY.md 说成"并列存在"，官方 injected prompt files 仅 3 个（AGENTS.md/SOUL.md/TOOLS.md），MEMORY+USER 存在但不注入，HEARTBEAT 未在 README 出现。**另发现官方丰富信息**：OpenClaw 创建者 Peter Steinberger (steipete) + Molty 龙虾 AI 原型、MIT、Node.js 24 runtime（非 Python）、ClawHub (clawhub.com) skills registry（与 Hermes 的 agentskills.io 不同！视频把二者混）、Live Canvas + A2UI、Voice Wake + Talk Mode（ElevenLabs）、25+ channels（视频只列 5-6）、OpenAI/GitHub/NVIDIA/Vercel sponsor、社区项目 HermesClaw 允许同一微信账号同时跑 Hermes+OpenClaw；Hermes v0.9.0、6 terminal backends（+Daytona/Singularity/Modal serverless）、Email channel、Android via Termux、Honcho by plastic-labs、Tinker-Atropos RL、相关项 hermes-agent-self-evolution ICLR 2026 Oral。**工作流输出**：此为本 wiki 首次"视频 → 官方源"完整工作流走通——新标准：视频素材先 draft，官方源交叉后升 stable；summary 加"视频 vs 官方"对照表作审计痕
+- 后续动作: (1) 用户 review 4 个增量页；(2) 想深入 Hermes 可按需 /ingest `docs.hermes-agent.nousresearch.com` 的 security/memory/cron/skills 子页（尤其验证 1300 token / 60s 轮询 / 5 层安全等具体参数）；(3) 想深入 OpenClaw 可 /ingest `docs.openclaw.ai` 的 gateway/security/sandboxing 页；(4) Hermes 研究线可单独抽一条做 synthesis：Nous 的 DisTrO + WorldSim/Doomscroll + Hermes 4 + Tinker-Atropos 的串接

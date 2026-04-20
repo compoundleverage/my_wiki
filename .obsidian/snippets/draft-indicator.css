@@ -1,0 +1,35 @@
+/*
+ * Review Dot Snippet — visualize review state in File Explorer
+ *
+ * 依赖：自研 minimal plugin `.obsidian/plugins/review-dot/main.js`
+ *   （Settings → Community plugins → Installed → 打开 Review Dot）
+ *
+ * 三态（由 plugin 根据 frontmatter 计算，写到 data-review 属性）：
+ *   - `fresh` → 🔵 蓝点：last_reviewed 为 null（从未人类 review）
+ *   - `stale` → 🟡 黄点：last_reviewed < last_updated（review 过，但之后有更新）
+ *   - `ok`   → 无点：last_reviewed >= last_updated（review 且 current）
+ *   - 字段缺失 → 无点（template / 例外）
+ *
+ * 启用：Settings → Appearance → CSS snippets → 刷新 → 勾选 draft-indicator
+ *
+ * 为什么不用 Supercharged Links：SL 支持任意字段 → 任意渲染管道，是通用工具；
+ * 本需求只要一个字段 → 一个属性 → 一个点，自研插件更小（~54 行代码）
+ */
+
+/* Fresh：从未 review → 蓝点 */
+.nav-file-title[data-review="fresh"]::before {
+  content: "●";
+  color: #2196f3;
+  margin-right: 6px;
+  font-size: 0.8em;
+}
+
+/* Stale：review 过但之后更新过 → 黄点 */
+.nav-file-title[data-review="stale"]::before {
+  content: "●";
+  color: #f5a623;
+  margin-right: 6px;
+  font-size: 0.8em;
+}
+
+/* OK 和字段缺失：无点（默认行为，此处不写规则） */
