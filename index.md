@@ -30,6 +30,10 @@ Last rebuild: 2026-04-21 (Day 4)
 - [[screenstudio]] · GitHub 工具（stub）；与 [[clicky]] 教学软件组合候选 · #tool #stub
 - [[clicky]] · GitHub 工具（stub）；farzaa 作，与 [[screenstudio]] 组合候选 · #tool #stub
 - [[review-dot-plugin]] · 本 wiki 维护者自研 Obsidian 插件（v0.2.0，~54 行 JS）；三态圆点 fresh/stale/ok + 一键 `Cmd+Shift+R` mark-reviewed · #tool #plugin #self-authored
+- [[autoresearch]] · Karpathy 2026-03 发布，75k+ stars；AI agent 通宵自主做 LLM 研究的最小 kit（3 文件：prepare/train/program.md） · #karpathy #autonomous-agent #research-kit
+- [[nanochat]] · Karpathy 的 LLM training 教育项目（stub）；[[autoresearch]] 的父项目 · #karpathy #llm-training #stub
+- [[autoresearch]] · Karpathy 2026-03 新作；AI agent 自主做 LLM 研究最小可运行 kit；75k stars · #product #github-repo #karpathy #autonomous-agent
+- [[nanochat]] · Karpathy 教育向 LLM 训练项目；[[autoresearch]] 父项目（stub） · #product #github-repo #karpathy #stub
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -49,6 +53,8 @@ Last rebuild: 2026-04-21 (Day 4)
 - [[skill-as-permanent-upgrade]] · 每个 skill 是永不衰减的资产，system compounds · #llm-architecture
 - [[procedural-knowledge]] · "记住方法" vs "记住事实"——Hermes 的 agent 自动生成 skill 机制 · #agent #skills #memory
 - [[tiered-memory-architecture]] · 分层记忆：小常驻 / 大检索 / 跨会话画像 / 程序性 skills · #agent #memory #architecture
+- [[autonomous-research-loop]] · Karpathy autoresearch 提炼的"modify → train → keep/discard → NEVER STOP" autonomous 研究循环 pattern · #autonomous #karpathy #experiment-loop
+- [[autonomous-research-loop]] · Modify → Train → Keep/Discard → NEVER STOP；Karpathy autoresearch 提炼的 autonomous agent pattern · #agent #autonomous #research-methodology
 - [[persistent-wiki-vs-rag]] · Karpathy 核心论证：wiki 编译一次持续维护 vs RAG 现场重拼 · #knowledge-base #core
 - [[knowledge-compilation]] · "知识即代码库"——Obsidian/LLM/wiki = IDE/programmer/codebase · #knowledge-base #core
 - [[compound-interest-tool]] · 每天产出一个对自己有复利的工具；"日拱一卒"（本 wiki 维护者原则） · #principle #personal #core
@@ -73,6 +79,8 @@ Last rebuild: 2026-04-21 (Day 4)
 - [[journal-2026-04-18]] · my_wiki Day 1 日记：完工 + 扩张性疑问 + AI 六特性起源 · #journal #milestone
 - [[journal-2026-04-19]] · my_wiki Day 2 日记：MarkitDown + QMD 实装 + 3 工具热榜发现 + 复利原则第 2 次背书 · #journal #milestone
 - [[journal-2026-04-20]] · my_wiki Day 3 日记：review-dot 插件原型（痛点→落地 24h 内）+ Harvard 四激素学习 + 用户独立到达"asked twice = failed"原则 · #journal #milestone #plugin-authoring
+- [[karpathy-autoresearch]] · Karpathy 2026-03 autoresearch repo 完整 ingest；README + program.md verbatim；skill spec 外部印证第 3 方 · #karpathy #autonomous-agent #skill-spec
+- [[karpathy-autoresearch]] · Karpathy 2026-03 autoresearch 官方 README + program.md 双文件 ingest；三独立信源（Tan / Hermes / Karpathy）收敛于"skill = markdown spec" · #karpathy #autonomous-agent #skill-spec
 - [[feel-good-hormones-series]] · Harvard Health 四+一篇：dopamine / serotonin / endorphins / oxytocin 全景 · #neuroscience #wellness
 - [[dopamine-fasting-grinspoon]] · Grinspoon MD 2020：dopamine fasting 科学辟谣 + 温和 CBT 版本的认知锚 · #debunking #wellness-critique
 - [[five-action-steps-quitting-addiction]] · Harvard 2021：5 步戒瘾公式（药物 / 酒精 / 行为三类通用） · #addiction #framework
