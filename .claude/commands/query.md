@@ -24,12 +24,18 @@ qmd query "<question>" --files --json --min-score 0.3 -n 15
 - **前置**：本地 QMD 索引已建（首次：`qmd collection add ./wiki --name wiki && qmd embed`）；wiki 大改后跑 `qmd embed` 增量更新
 - 失败时（qmd 未安装 / exit ≠ 0 / 结果空）：跳过本子步，单走 §1b，不阻塞 /query
 
-#### 1b. index.md / aliases 锚定
+#### 1b. index.md / aliases 锚定（index-first，Karpathy 规范）
 
-- Read `index.md`
-- 按分类 + aliases 圈出候选页面集合
-- 辅以 Grep：`Grep <关键词> wiki/**/*.md --output-mode files_with_matches`
-- 强项：问题含明确实体名 / 用户惯用别名 / 显式 wikilink 引用
+Karpathy gist line 57 原文："When answering a query, the LLM **reads the index first** to find relevant pages, then drills into them."
+
+执行顺序（严格）：
+
+1. **Read `index.md`**（必做）
+2. 按分类 + aliases 圈出候选页面集合
+3. **Grep 是 fallback，非并列**：仅当 §1a qmd 结果 + §1b index 合起来候选 **< 3 页**时，才用 Grep `<关键词> wiki/**/*.md` 兜底（防止 index 覆盖不全时漏召回）
+4. 若 grep 兜底触发 → log.md 后续动作字段备注"补 index 条目 `[[page-x]]`"（对应页应被 index 收录但未收录）
+
+强项：问题含明确实体名 / 用户惯用别名 / 显式 wikilink 引用。
 
 #### 1c. 合并去重
 
