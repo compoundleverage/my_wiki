@@ -1,6 +1,6 @@
 # Knowledge Wiki Index
 
-Last rebuild: 2026-04-21 (Day 4)
+Last rebuild: 2026-04-22 (Day 5)
 
 个人知识库的全局导航。任何严肃的 `/query` 都从这里开始。
 
@@ -34,6 +34,8 @@ Last rebuild: 2026-04-21 (Day 4)
 - [[nanochat]] · Karpathy 的 LLM training 教育项目（stub）；[[autoresearch]] 的父项目 · #karpathy #llm-training #stub
 - [[autoresearch]] · Karpathy 2026-03 新作；AI agent 自主做 LLM 研究最小可运行 kit；75k stars · #product #github-repo #karpathy #autonomous-agent
 - [[nanochat]] · Karpathy 教育向 LLM 训练项目；[[autoresearch]] 父项目（stub） · #product #github-repo #karpathy #stub
+- [[langchain]] · AI 应用开发框架公司；`deepagents` harness library；2026-03 Trivedy 博客给本 wiki 提供 harness 议题第 3 视角 · #organization #ai-company #agent-tooling
+- [[vivek-trivedy]] · LangChain 工程师；《The Anatomy of an Agent Harness》作者；"Agent = Model + Harness" 等式 + 9 primitives 清单提出者 · #author #langchain #harness-engineering
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -54,7 +56,10 @@ Last rebuild: 2026-04-21 (Day 4)
 - [[procedural-knowledge]] · "记住方法" vs "记住事实"——Hermes 的 agent 自动生成 skill 机制 · #agent #skills #memory
 - [[tiered-memory-architecture]] · 分层记忆：小常驻 / 大检索 / 跨会话画像 / 程序性 skills · #agent #memory #architecture
 - [[autonomous-research-loop]] · Karpathy autoresearch 提炼的"modify → train → keep/discard → NEVER STOP" autonomous 研究循环 pattern · #autonomous #karpathy #experiment-loop
+- [[agent-vs-human-editable-surface]] · Skill spec 必须显式声明谁可改什么文件；基准/实验/规则/轨迹四层分配；autoresearch 三文件架构是最清晰实施 · #agent-design #skill-spec #boundary
 - [[autonomous-research-loop]] · Modify → Train → Keep/Discard → NEVER STOP；Karpathy autoresearch 提炼的 autonomous agent pattern · #agent #autonomous #research-methodology
+- [[ralph-loop]] · Harness hook 拦 exit + 干净 context 重注原 prompt；Trivedy 命名的 long-horizon 执行 pattern；NEVER STOP 的 hook 层兜底 · #harness #long-horizon #hook
+- [[context-rot]] · Context 填充导致 reasoning 退化的一般现象；Trivedy 命名；3 机制对付（compaction / tool-offloading / progressive-disclosure） · #llm-architecture #context-engineering #langchain
 - [[persistent-wiki-vs-rag]] · Karpathy 核心论证：wiki 编译一次持续维护 vs RAG 现场重拼 · #knowledge-base #core
 - [[knowledge-compilation]] · "知识即代码库"——Obsidian/LLM/wiki = IDE/programmer/codebase · #knowledge-base #core
 - [[compound-interest-tool]] · 每天产出一个对自己有复利的工具；"日拱一卒"（本 wiki 维护者原则） · #principle #personal #core
@@ -79,12 +84,14 @@ Last rebuild: 2026-04-21 (Day 4)
 - [[journal-2026-04-18]] · my_wiki Day 1 日记：完工 + 扩张性疑问 + AI 六特性起源 · #journal #milestone
 - [[journal-2026-04-19]] · my_wiki Day 2 日记：MarkitDown + QMD 实装 + 3 工具热榜发现 + 复利原则第 2 次背书 · #journal #milestone
 - [[journal-2026-04-20]] · my_wiki Day 3 日记：review-dot 插件原型（痛点→落地 24h 内）+ Harvard 四激素学习 + 用户独立到达"asked twice = failed"原则 · #journal #milestone #plugin-authoring
+- [[journal-2026-04-21]] · my_wiki Day 4 日记：harness 议题收官（3 次 ingest）+ ingest §3 预筛优化（痛点→落地 <24h 第 2 例）+ 用户独立到达"Agent = Model + Harness Engineering" + working-backwards 方法论 · #journal #milestone #harness-engineering
 - [[karpathy-autoresearch]] · Karpathy 2026-03 autoresearch repo 完整 ingest；README + program.md verbatim；skill spec 外部印证第 3 方 · #karpathy #autonomous-agent #skill-spec
 - [[karpathy-autoresearch]] · Karpathy 2026-03 autoresearch 官方 README + program.md 双文件 ingest；三独立信源（Tan / Hermes / Karpathy）收敛于"skill = markdown spec" · #karpathy #autonomous-agent #skill-spec
 - [[feel-good-hormones-series]] · Harvard Health 四+一篇：dopamine / serotonin / endorphins / oxytocin 全景 · #neuroscience #wellness
 - [[dopamine-fasting-grinspoon]] · Grinspoon MD 2020：dopamine fasting 科学辟谣 + 温和 CBT 版本的认知锚 · #debunking #wellness-critique
 - [[five-action-steps-quitting-addiction]] · Harvard 2021：5 步戒瘾公式（药物 / 酒精 / 行为三类通用） · #addiction #framework
 - [[hermes-vs-openclaw]] · 最佳拍档 2026-04-17 视频；Hermes Agent vs OpenClaw 架构大对比 + EvoMap 抄袭风波 · #agent #architecture-comparison #youtube-summary
+- [[langchain-anatomy-of-agent-harness]] · Trivedy 2026-03-10 LangChain 博客：harness 等式 + 9 primitives + Ralph Loop + Context Rot + Model-Harness 共进化 · #harness #langchain #core
 
 ## Events
 <!-- 时间相关条目（可选） -->
@@ -97,6 +104,7 @@ Last rebuild: 2026-04-21 (Day 4)
 <!-- ADR 风格的决策记录 -->
 
 - [[obsidian-as-ide-redirect]] · 2026-04-18 决定不单建 obsidian-as-ide 页，重定向到 [[knowledge-compilation]] · #decision #wiki-governance
+- [[autoresearch-on-mac]] · 2026-04-21 ADR：默认梯度 1（只读 wiki + 反哺 slash commands），梯度 2（MLX fork） / 3（租 H100）作 future pivot · #decision #autoresearch #hardware
 
 ## Projects
 <!-- 前瞻性：active / paused / done 的多日项目；升级自 raw/journal/ 里 touch-count ≥ 3 的 TODO -->
