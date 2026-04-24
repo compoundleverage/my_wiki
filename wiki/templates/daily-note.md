@@ -23,4 +23,4 @@ platform: journal
 ## 想法
 
 
-## 明天
+## 计划
