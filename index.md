@@ -1,6 +1,6 @@
 # Knowledge Wiki Index
 
-Last rebuild: 2026-04-22 (Day 5)
+Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 
 个人知识库的全局导航。任何严肃的 `/query` 都从这里开始。
 
@@ -36,6 +36,7 @@ Last rebuild: 2026-04-22 (Day 5)
 - [[nanochat]] · Karpathy 教育向 LLM 训练项目；[[autoresearch]] 父项目（stub） · #product #github-repo #karpathy #stub
 - [[langchain]] · AI 应用开发框架公司；`deepagents` harness library；2026-03 Trivedy 博客给本 wiki 提供 harness 议题第 3 视角 · #organization #ai-company #agent-tooling
 - [[vivek-trivedy]] · LangChain 工程师；《The Anatomy of an Agent Harness》作者；"Agent = Model + Harness" 等式 + 9 primitives 清单提出者 · #author #langchain #harness-engineering
+- [[agentskills-io]] · Anthropic 原创的 Agent Skills 开放标准；SKILL.md 规范 + 三级 progressive disclosure + 35+ 产品 adopter · #open-standard #specification #skill-spec
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -74,6 +75,7 @@ Last rebuild: 2026-04-22 (Day 5)
 - [[four-feel-good-hormones]] · Dopamine vs Serotonin vs Endorphins vs Oxytocin 对比表 · #comparison #hormones
 - [[dopamine-fasting]] · "多巴胺断食"辟谣 + Sepah 原 CBT 温和版操作 · #debunking #cbt #mindfulness
 - [[addiction-recovery]] · Harvard 5 步戒瘾框架；对应 dopamine 强化回路的逆向工程 · #addiction #recovery
+- [[progressive-disclosure]] · Metadata / Body / Resources 三级按需加载；agentskills.io canonical 实施 + Trivedy harness primitive · #llm-architecture #context-engineering #skill-spec
 
 ## Sources
 <!-- raw/ 下的原始资料，由 /ingest 自动维护 -->
@@ -92,6 +94,7 @@ Last rebuild: 2026-04-22 (Day 5)
 - [[five-action-steps-quitting-addiction]] · Harvard 2021：5 步戒瘾公式（药物 / 酒精 / 行为三类通用） · #addiction #framework
 - [[hermes-vs-openclaw]] · 最佳拍档 2026-04-17 视频；Hermes Agent vs OpenClaw 架构大对比 + EvoMap 抄袭风波 · #agent #architecture-comparison #youtube-summary
 - [[langchain-anatomy-of-agent-harness]] · Trivedy 2026-03-10 LangChain 博客：harness 等式 + 9 primitives + Ralph Loop + Context Rot + Model-Harness 共进化 · #harness #langchain #core
+- [[agentskills-io-standard]] · 2026-04-22 /ingest agentskills.io 三页；SKILL.md 规范 + 必填字段 + progressive disclosure + 35+ adopter；OpenClaw/Hermes 接入状态待验证 · #open-standard #skill-spec #anthropic
 
 ## Events
 <!-- 时间相关条目（可选） -->
@@ -105,7 +108,11 @@ Last rebuild: 2026-04-22 (Day 5)
 
 - [[obsidian-as-ide-redirect]] · 2026-04-18 决定不单建 obsidian-as-ide 页，重定向到 [[knowledge-compilation]] · #decision #wiki-governance
 - [[autoresearch-on-mac]] · 2026-04-21 ADR：默认梯度 1（只读 wiki + 反哺 slash commands），梯度 2（MLX fork） / 3（租 H100）作 future pivot · #decision #autoresearch #hardware
+- [[claude-md-rationale]] · 2026-04-22 CLAUDE.md 瘦身后的 rationale 层：schema 正交字段 / Obsidian 插件呈现 / TODO 升级方法论 / Karpathy 四卖点自检 · #decision #wiki-governance #schema-design
+- [[decisions/authored-raw-assets-extension]] · 2026-04-23 ADR：扩展 Authored raw 覆盖 raw/assets/，支持第一方 design/essay/presentation 归档与 sovereignty · #decision #wiki-governance #schema-design
 
 ## Projects
 <!-- 前瞻性：active / paused / done 的多日项目；升级自 raw/journal/ 里 touch-count ≥ 3 的 TODO -->
+
+- [[projects/ai-zhiji]] · Dual-World Reciprocal AI 伴侣（三域 file-over-app + anchor narrative + Hermes agent）；office-hours 3 产出，W1-16 plan locked · #project #ai-companion #dual-world #active
 

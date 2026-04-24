@@ -8,10 +8,12 @@ output/*.tmp
 *.swo
 
 # Personal content — harness-public, content-private split (2026-04-19)
-# raw 日记（自生一手素材）+ wiki 内容层
+# raw 日记（自生一手素材）+ raw/assets/ 第一方 artifact + wiki 内容层
 raw/journal/
+raw/assets/
 wiki/summaries/
 wiki/entities/
 wiki/concepts/
 wiki/syntheses/
 wiki/decisions/
+wiki/projects/
