@@ -47,6 +47,45 @@
 
 若 `<file>` 已是 `.md` 或 `.txt`：跳过本步直接进 §2。
 
+### 1.6. YouTube auto-caption SRT → dedup .md sidecar（若适用）
+
+若 raw/ 下有 yt-dlp 派生的 `<slug>.<lang>.srt` 字幕文件（auto-caption rolling 格式：cue N+1 = cue N text + new line；偶数 cue 是 10ms blank 重复前一行），**Read 这些 .srt 会消耗 3-5× token**，所以 ingest 时先派生 dedup `.md` sidecar：
+
+- 优先选 `.en.srt`（YouTube auto-caption 英文比中文翻译更准；中文是英文回译，含错）
+- 用以下 inline Python 一遍跑完，输出取每非短时长 cue 的**末非空行**（rolling 格式下"末行 = 新增文本"），相邻去重：
+
+  ```python
+  import re
+  with open('<srt-path>') as f:
+      blocks = re.split(r'\n\n+', f.read().strip())
+  seen = []
+  for b in blocks:
+      lines = b.strip().split('\n')
+      if len(lines) < 3: continue
+      text_lines = [l.strip() for l in lines[2:] if l.strip()]
+      if not text_lines: continue
+      new_line = text_lines[-1]
+      if seen and new_line == seen[-1]: continue
+      seen.append(new_line)
+  print('\n'.join(seen))
+  ```
+
+- 写到 `raw/<slug>.dedup.md`，frontmatter：
+
+  ```yaml
+  ---
+  derived_from: <slug>.<lang>.srt
+  derived_via: srt-dedup-rolling-cue
+  derived_at: <today YYYY-MM-DD>
+  source_url: <YouTube URL，从 /clip 索引 .md 继承>
+  ---
+  ```
+
+- 后续 §2 Read 走 `<slug>.dedup.md`；`.srt` 保留作底证（不删）
+- 若 sidecar `.md` 已存在 → 跳过转换（幂等）
+
+uploader-uploaded（manual）字幕通常已干净——可启发式判断：若同 slug 的 `.<lang>.srt` 行数 < 1.5× 视频秒数（粗估），跳过 dedup 直接 Read .srt；否则走 dedup。
+
 ### 2. 深读与对齐
 
 - 用 Read 读全文（PDF / Markdown 都支持；PDF 超过 10 页要分批）

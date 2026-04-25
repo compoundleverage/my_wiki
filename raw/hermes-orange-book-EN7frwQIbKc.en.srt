@@ -1,0 +1,2515 @@
+1
+00:00:09,519 --> 00:00:12,709
+
+Hi, I'm Diana and I'm a partner at YC.
+
+2
+00:00:12,709 --> 00:00:12,719
+Hi, I'm Diana and I'm a partner at YC.
+ 
+
+3
+00:00:12,719 --> 00:00:14,549
+Hi, I'm Diana and I'm a partner at YC.
+Over the past few months, it's become
+
+4
+00:00:14,549 --> 00:00:14,559
+Over the past few months, it's become
+ 
+
+5
+00:00:14,559 --> 00:00:17,029
+Over the past few months, it's become
+clear to me that AI is not just going to
+
+6
+00:00:17,029 --> 00:00:17,039
+clear to me that AI is not just going to
+ 
+
+7
+00:00:17,039 --> 00:00:19,189
+clear to me that AI is not just going to
+change how quickly software gets built
+
+8
+00:00:19,189 --> 00:00:19,199
+change how quickly software gets built
+ 
+
+9
+00:00:19,199 --> 00:00:21,429
+change how quickly software gets built
+or what workflows get automated. It's
+
+10
+00:00:21,429 --> 00:00:21,439
+or what workflows get automated. It's
+ 
+
+11
+00:00:21,439 --> 00:00:23,109
+or what workflows get automated. It's
+going to fundamentally change the way
+
+12
+00:00:23,109 --> 00:00:23,119
+going to fundamentally change the way
+ 
+
+13
+00:00:23,119 --> 00:00:25,349
+going to fundamentally change the way
+startup should be run from what roles
+
+14
+00:00:25,349 --> 00:00:25,359
+startup should be run from what roles
+ 
+
+15
+00:00:25,359 --> 00:00:28,070
+startup should be run from what roles
+will exist to what products are possible
+
+16
+00:00:28,070 --> 00:00:28,080
+will exist to what products are possible
+ 
+
+17
+00:00:28,080 --> 00:00:30,150
+will exist to what products are possible
+to build. In this episode, I'm going to
+
+18
+00:00:30,150 --> 00:00:30,160
+to build. In this episode, I'm going to
+ 
+
+19
+00:00:30,160 --> 00:00:31,990
+to build. In this episode, I'm going to
+discuss how founders should think about
+
+20
+00:00:31,990 --> 00:00:32,000
+discuss how founders should think about
+ 
+
+21
+00:00:32,000 --> 00:00:34,549
+discuss how founders should think about
+building an AI native company, what
+
+22
+00:00:34,549 --> 00:00:34,559
+building an AI native company, what
+ 
+
+23
+00:00:34,559 --> 00:00:36,549
+building an AI native company, what
+roles their team should have, and what
+
+24
+00:00:36,549 --> 00:00:36,559
+roles their team should have, and what
+ 
+
+25
+00:00:36,559 --> 00:00:38,310
+roles their team should have, and what
+concrete internal practices they can
+
+26
+00:00:38,310 --> 00:00:38,320
+concrete internal practices they can
+ 
+
+27
+00:00:38,320 --> 00:00:40,709
+concrete internal practices they can
+adopt right now to move much faster.
+
+28
+00:00:40,709 --> 00:00:40,719
+adopt right now to move much faster.
+ 
+
+29
+00:00:40,719 --> 00:00:43,270
+adopt right now to move much faster.
+Currently, most people talk about AI in
+
+30
+00:00:43,270 --> 00:00:43,280
+Currently, most people talk about AI in
+ 
+
+31
+00:00:43,280 --> 00:00:45,030
+Currently, most people talk about AI in
+terms of productivity. They'll talk at
+
+32
+00:00:45,030 --> 00:00:45,040
+terms of productivity. They'll talk at
+ 
+
+33
+00:00:45,040 --> 00:00:46,950
+terms of productivity. They'll talk at
+length about how it can make engineers
+
+34
+00:00:46,950 --> 00:00:46,960
+length about how it can make engineers
+ 
+
+35
+00:00:46,960 --> 00:00:49,350
+length about how it can make engineers
+more productive or say we need to add
+
+36
+00:00:49,350 --> 00:00:49,360
+more productive or say we need to add
+ 
+
+37
+00:00:49,360 --> 00:00:51,990
+more productive or say we need to add
+copilot to existing workflows and ship
+
+38
+00:00:51,990 --> 00:00:52,000
+copilot to existing workflows and ship
+ 
+
+39
+00:00:52,000 --> 00:00:54,869
+copilot to existing workflows and ship
+more features. This framing misses the
+
+40
+00:00:54,869 --> 00:00:54,879
+more features. This framing misses the
+ 
+
+41
+00:00:54,879 --> 00:00:57,350
+more features. This framing misses the
+shift we're currently seeing, which is
+
+42
+00:00:57,350 --> 00:00:57,360
+shift we're currently seeing, which is
+ 
+
+43
+00:00:57,360 --> 00:00:59,349
+shift we're currently seeing, which is
+less about productivity boosts than
+
+44
+00:00:59,349 --> 00:00:59,359
+less about productivity boosts than
+ 
+
+45
+00:00:59,359 --> 00:01:02,310
+less about productivity boosts than
+entirely new capabilities. The right
+
+46
+00:01:02,310 --> 00:01:02,320
+entirely new capabilities. The right
+ 
+
+47
+00:01:02,320 --> 00:01:04,229
+entirely new capabilities. The right
+person with AI tools can now build
+
+48
+00:01:04,229 --> 00:01:04,239
+person with AI tools can now build
+ 
+
+49
+00:01:04,239 --> 00:01:06,310
+person with AI tools can now build
+features that used to require an entire
+
+50
+00:01:06,310 --> 00:01:06,320
+features that used to require an entire
+ 
+
+51
+00:01:06,320 --> 00:01:09,350
+features that used to require an entire
+team or were just impossible. Thinking
+
+52
+00:01:09,350 --> 00:01:09,360
+team or were just impossible. Thinking
+ 
+
+53
+00:01:09,360 --> 00:01:11,510
+team or were just impossible. Thinking
+about AI in terms of new capabilities
+
+54
+00:01:11,510 --> 00:01:11,520
+about AI in terms of new capabilities
+ 
+
+55
+00:01:11,520 --> 00:01:13,510
+about AI in terms of new capabilities
+has several implications for how
+
+56
+00:01:13,510 --> 00:01:13,520
+has several implications for how
+ 
+
+57
+00:01:13,520 --> 00:01:15,670
+has several implications for how
+founders should run their companies. At
+
+58
+00:01:15,670 --> 00:01:15,680
+founders should run their companies. At
+ 
+
+59
+00:01:15,680 --> 00:01:17,749
+founders should run their companies. At
+a high level, the way to think about AI
+
+60
+00:01:17,749 --> 00:01:17,759
+a high level, the way to think about AI
+ 
+
+61
+00:01:17,759 --> 00:01:20,149
+a high level, the way to think about AI
+is that it should not be a tool your
+
+62
+00:01:20,149 --> 00:01:20,159
+is that it should not be a tool your
+ 
+
+63
+00:01:20,159 --> 00:01:23,190
+is that it should not be a tool your
+company just uses. It should be the
+
+64
+00:01:23,190 --> 00:01:23,200
+company just uses. It should be the
+ 
+
+65
+00:01:23,200 --> 00:01:26,550
+company just uses. It should be the
+operating system your company runs on.
+
+66
+00:01:26,550 --> 00:01:26,560
+operating system your company runs on.
+ 
+
+67
+00:01:26,560 --> 00:01:29,190
+operating system your company runs on.
+Every workflow, every decision and every
+
+68
+00:01:29,190 --> 00:01:29,200
+Every workflow, every decision and every
+ 
+
+69
+00:01:29,200 --> 00:01:30,630
+Every workflow, every decision and every
+process should flow through an
+
+70
+00:01:30,630 --> 00:01:30,640
+process should flow through an
+ 
+
+71
+00:01:30,640 --> 00:01:33,109
+process should flow through an
+intelligent layer that is constantly
+
+72
+00:01:33,109 --> 00:01:33,119
+intelligent layer that is constantly
+ 
+
+73
+00:01:33,119 --> 00:01:35,350
+intelligent layer that is constantly
+learning and improving. What this means
+
+74
+00:01:35,350 --> 00:01:35,360
+learning and improving. What this means
+ 
+
+75
+00:01:35,360 --> 00:01:37,590
+learning and improving. What this means
+concretely is every important process in
+
+76
+00:01:37,590 --> 00:01:37,600
+concretely is every important process in
+ 
+
+77
+00:01:37,600 --> 00:01:39,429
+concretely is every important process in
+your company should be captured by an
+
+78
+00:01:39,429 --> 00:01:39,439
+your company should be captured by an
+ 
+
+79
+00:01:39,439 --> 00:01:41,830
+your company should be captured by an
+intelligent close loop. A close loop
+
+80
+00:01:41,830 --> 00:01:41,840
+intelligent close loop. A close loop
+ 
+
+81
+00:01:41,840 --> 00:01:43,990
+intelligent close loop. A close loop
+captures information, feeds it back into
+
+82
+00:01:43,990 --> 00:01:44,000
+captures information, feeds it back into
+ 
+
+83
+00:01:44,000 --> 00:01:45,830
+captures information, feeds it back into
+an intelligent systems, and improves the
+
+84
+00:01:45,830 --> 00:01:45,840
+an intelligent systems, and improves the
+ 
+
+85
+00:01:45,840 --> 00:01:47,910
+an intelligent systems, and improves the
+process over time. If you've ever
+
+86
+00:01:47,910 --> 00:01:47,920
+process over time. If you've ever
+ 
+
+87
+00:01:47,920 --> 00:01:49,670
+process over time. If you've ever
+studied control systems, you'll be
+
+88
+00:01:49,670 --> 00:01:49,680
+studied control systems, you'll be
+ 
+
+89
+00:01:49,680 --> 00:01:51,429
+studied control systems, you'll be
+familiar with the difference between an
+
+90
+00:01:51,429 --> 00:01:51,439
+familiar with the difference between an
+ 
+
+91
+00:01:51,439 --> 00:01:53,830
+familiar with the difference between an
+open loop and a closed loop system. Open
+
+92
+00:01:53,830 --> 00:01:53,840
+open loop and a closed loop system. Open
+ 
+
+93
+00:01:53,840 --> 00:01:55,590
+open loop and a closed loop system. Open
+loops are controlled systems without
+
+94
+00:01:55,590 --> 00:01:55,600
+loops are controlled systems without
+ 
+
+95
+00:01:55,600 --> 00:01:57,830
+loops are controlled systems without
+feedback loops. In the old world,
+
+96
+00:01:57,830 --> 00:01:57,840
+feedback loops. In the old world,
+ 
+
+97
+00:01:57,840 --> 00:02:00,389
+feedback loops. In the old world,
+companies basically ran as open loops.
+
+98
+00:02:00,389 --> 00:02:00,399
+companies basically ran as open loops.
+ 
+
+99
+00:02:00,399 --> 00:02:02,709
+companies basically ran as open loops.
+You made a decision, executed it, and
+
+100
+00:02:02,709 --> 00:02:02,719
+You made a decision, executed it, and
+ 
+
+101
+00:02:02,719 --> 00:02:05,190
+You made a decision, executed it, and
+didn't always systematically measure the
+
+102
+00:02:05,190 --> 00:02:05,200
+didn't always systematically measure the
+ 
+
+103
+00:02:05,200 --> 00:02:07,830
+didn't always systematically measure the
+outcome and adjust the process. Open
+
+104
+00:02:07,830 --> 00:02:07,840
+outcome and adjust the process. Open
+ 
+
+105
+00:02:07,840 --> 00:02:10,389
+outcome and adjust the process. Open
+loops are inherently lossy. A closed
+
+106
+00:02:10,389 --> 00:02:10,399
+loops are inherently lossy. A closed
+ 
+
+107
+00:02:10,399 --> 00:02:11,670
+loops are inherently lossy. A closed
+loop, on the other hand, is
+
+108
+00:02:11,670 --> 00:02:11,680
+loop, on the other hand, is
+ 
+
+109
+00:02:11,680 --> 00:02:14,070
+loop, on the other hand, is
+self-regulating. It continuously
+
+110
+00:02:14,070 --> 00:02:14,080
+self-regulating. It continuously
+ 
+
+111
+00:02:14,080 --> 00:02:16,630
+self-regulating. It continuously
+monitors its output and adjusts its
+
+112
+00:02:16,630 --> 00:02:16,640
+monitors its output and adjusts its
+ 
+
+113
+00:02:16,640 --> 00:02:19,030
+monitors its output and adjusts its
+process to better meet the stated goal.
+
+114
+00:02:19,030 --> 00:02:19,040
+process to better meet the stated goal.
+ 
+
+115
+00:02:19,040 --> 00:02:21,270
+process to better meet the stated goal.
+Closed loops are extremely powerful for
+
+116
+00:02:21,270 --> 00:02:21,280
+Closed loops are extremely powerful for
+ 
+
+117
+00:02:21,280 --> 00:02:23,030
+Closed loops are extremely powerful for
+correctness and stability. With
+
+118
+00:02:23,030 --> 00:02:23,040
+correctness and stability. With
+ 
+
+119
+00:02:23,040 --> 00:02:25,030
+correctness and stability. With
+self-improving agents, your company
+
+120
+00:02:25,030 --> 00:02:25,040
+self-improving agents, your company
+ 
+
+121
+00:02:25,040 --> 00:02:26,949
+self-improving agents, your company
+should run as a closed loop. To build
+
+122
+00:02:26,949 --> 00:02:26,959
+should run as a closed loop. To build
+ 
+
+123
+00:02:26,959 --> 00:02:28,869
+should run as a closed loop. To build
+these closed loops, you will need to
+
+124
+00:02:28,869 --> 00:02:28,879
+these closed loops, you will need to
+ 
+
+125
+00:02:28,879 --> 00:02:32,150
+these closed loops, you will need to
+make your entire company queryable. In
+
+126
+00:02:32,150 --> 00:02:32,160
+make your entire company queryable. In
+ 
+
+127
+00:02:32,160 --> 00:02:34,150
+make your entire company queryable. In
+other words, the whole organization
+
+128
+00:02:34,150 --> 00:02:34,160
+other words, the whole organization
+ 
+
+129
+00:02:34,160 --> 00:02:36,790
+other words, the whole organization
+should be legible to AI. Every important
+
+130
+00:02:36,790 --> 00:02:36,800
+should be legible to AI. Every important
+ 
+
+131
+00:02:36,800 --> 00:02:38,869
+should be legible to AI. Every important
+action should produce an artifact that
+
+132
+00:02:38,869 --> 00:02:38,879
+action should produce an artifact that
+ 
+
+133
+00:02:38,879 --> 00:02:40,790
+action should produce an artifact that
+the intelligence at the center of the
+
+134
+00:02:40,790 --> 00:02:40,800
+the intelligence at the center of the
+ 
+
+135
+00:02:40,800 --> 00:02:42,949
+the intelligence at the center of the
+company can learn from and use to
+
+136
+00:02:42,949 --> 00:02:42,959
+company can learn from and use to
+ 
+
+137
+00:02:42,959 --> 00:02:45,830
+company can learn from and use to
+self-improve. This means recording your
+
+138
+00:02:45,830 --> 00:02:45,840
+self-improve. This means recording your
+ 
+
+139
+00:02:45,840 --> 00:02:47,350
+self-improve. This means recording your
+meetings with the AI notetaker,
+
+140
+00:02:47,350 --> 00:02:47,360
+meetings with the AI notetaker,
+ 
+
+141
+00:02:47,360 --> 00:02:49,589
+meetings with the AI notetaker,
+minimizing DMs and emails, and embedding
+
+142
+00:02:49,589 --> 00:02:49,599
+minimizing DMs and emails, and embedding
+ 
+
+143
+00:02:49,599 --> 00:02:51,430
+minimizing DMs and emails, and embedding
+agents throughout communication of all
+
+144
+00:02:51,430 --> 00:02:51,440
+agents throughout communication of all
+ 
+
+145
+00:02:51,440 --> 00:02:54,150
+agents throughout communication of all
+channels. It also means building custom
+
+146
+00:02:54,150 --> 00:02:54,160
+channels. It also means building custom
+ 
+
+147
+00:02:54,160 --> 00:02:55,830
+channels. It also means building custom
+dashboards with everything in the
+
+148
+00:02:55,830 --> 00:02:55,840
+dashboards with everything in the
+ 
+
+149
+00:02:55,840 --> 00:02:58,229
+dashboards with everything in the
+company, revenue, sales, engineering,
+
+150
+00:02:58,229 --> 00:02:58,239
+company, revenue, sales, engineering,
+ 
+
+151
+00:02:58,239 --> 00:03:00,550
+company, revenue, sales, engineering,
+hiring, ops, everything. Here's a
+
+152
+00:03:00,550 --> 00:03:00,560
+hiring, ops, everything. Here's a
+ 
+
+153
+00:03:00,560 --> 00:03:02,949
+hiring, ops, everything. Here's a
+concrete example of how it could work.
+
+154
+00:03:02,949 --> 00:03:02,959
+concrete example of how it could work.
+ 
+
+155
+00:03:02,959 --> 00:03:05,110
+concrete example of how it could work.
+Take engineering, management, and sprint
+
+156
+00:03:05,110 --> 00:03:05,120
+Take engineering, management, and sprint
+ 
+
+157
+00:03:05,120 --> 00:03:06,949
+Take engineering, management, and sprint
+planning. If you have an agent that has
+
+158
+00:03:06,949 --> 00:03:06,959
+planning. If you have an agent that has
+ 
+
+159
+00:03:06,959 --> 00:03:09,430
+planning. If you have an agent that has
+access to your linear tickets, all your
+
+160
+00:03:09,430 --> 00:03:09,440
+access to your linear tickets, all your
+ 
+
+161
+00:03:09,440 --> 00:03:11,750
+access to your linear tickets, all your
+Slack engineering channels, all customer
+
+162
+00:03:11,750 --> 00:03:11,760
+Slack engineering channels, all customer
+ 
+
+163
+00:03:11,760 --> 00:03:14,149
+Slack engineering channels, all customer
+feedback from emails or tools like Pylon
+
+164
+00:03:14,149 --> 00:03:14,159
+feedback from emails or tools like Pylon
+ 
+
+165
+00:03:14,159 --> 00:03:16,949
+feedback from emails or tools like Pylon
+and GitHub, highle plans in a notion or
+
+166
+00:03:16,949 --> 00:03:16,959
+and GitHub, highle plans in a notion or
+ 
+
+167
+00:03:16,959 --> 00:03:19,110
+and GitHub, highle plans in a notion or
+Google doc, sales calls and recordings
+
+168
+00:03:19,110 --> 00:03:19,120
+Google doc, sales calls and recordings
+ 
+
+169
+00:03:19,120 --> 00:03:22,309
+Google doc, sales calls and recordings
+from daily standups, then the agent can
+
+170
+00:03:22,309 --> 00:03:22,319
+from daily standups, then the agent can
+ 
+
+171
+00:03:22,319 --> 00:03:24,790
+from daily standups, then the agent can
+analyze what was actually shipped in
+
+172
+00:03:24,790 --> 00:03:24,800
+analyze what was actually shipped in
+ 
+
+173
+00:03:24,800 --> 00:03:26,869
+analyze what was actually shipped in
+your previous sprint and how well they
+
+174
+00:03:26,869 --> 00:03:26,879
+your previous sprint and how well they
+ 
+
+175
+00:03:26,879 --> 00:03:29,670
+your previous sprint and how well they
+met customers needs for real. From
+
+176
+00:03:29,670 --> 00:03:29,680
+met customers needs for real. From
+ 
+
+177
+00:03:29,680 --> 00:03:32,149
+met customers needs for real. From
+there, you can go a step further with
+
+178
+00:03:32,149 --> 00:03:32,159
+there, you can go a step further with
+ 
+
+179
+00:03:32,159 --> 00:03:34,630
+there, you can go a step further with
+full visibility into what shipped, what
+
+180
+00:03:34,630 --> 00:03:34,640
+full visibility into what shipped, what
+ 
+
+181
+00:03:34,640 --> 00:03:36,710
+full visibility into what shipped, what
+worked, and what didn't. Agents can
+
+182
+00:03:36,710 --> 00:03:36,720
+worked, and what didn't. Agents can
+ 
+
+183
+00:03:36,720 --> 00:03:38,470
+worked, and what didn't. Agents can
+start looking ahead. They can propose
+
+184
+00:03:38,470 --> 00:03:38,480
+start looking ahead. They can propose
+ 
+
+185
+00:03:38,480 --> 00:03:40,470
+start looking ahead. They can propose
+sprint plans for engineers that are way
+
+186
+00:03:40,470 --> 00:03:40,480
+sprint plans for engineers that are way
+ 
+
+187
+00:03:40,480 --> 00:03:42,229
+sprint plans for engineers that are way
+more predictable and accurate and on
+
+188
+00:03:42,229 --> 00:03:42,239
+more predictable and accurate and on
+ 
+
+189
+00:03:42,239 --> 00:03:44,869
+more predictable and accurate and on
+track. The days of anch manager status
+
+190
+00:03:44,869 --> 00:03:44,879
+track. The days of anch manager status
+ 
+
+191
+00:03:44,879 --> 00:03:47,830
+track. The days of anch manager status
+rollups that are super lossy are gone.
+
+192
+00:03:47,830 --> 00:03:47,840
+rollups that are super lossy are gone.
+ 
+
+193
+00:03:47,840 --> 00:03:49,830
+rollups that are super lossy are gone.
+Having managed engineering teams myself
+
+194
+00:03:49,830 --> 00:03:49,840
+Having managed engineering teams myself
+ 
+
+195
+00:03:49,840 --> 00:03:52,390
+Having managed engineering teams myself
+and now seeing this across multiple YC
+
+196
+00:03:52,390 --> 00:03:52,400
+and now seeing this across multiple YC
+ 
+
+197
+00:03:52,400 --> 00:03:55,910
+and now seeing this across multiple YC
+companies, this is a gamecher. What used
+
+198
+00:03:55,910 --> 00:03:55,920
+companies, this is a gamecher. What used
+ 
+
+199
+00:03:55,920 --> 00:03:58,789
+companies, this is a gamecher. What used
+to require constant coordination becomes
+
+200
+00:03:58,789 --> 00:03:58,799
+to require constant coordination becomes
+ 
+
+201
+00:03:58,799 --> 00:04:02,149
+to require constant coordination becomes
+legible and querable by default. I've
+
+202
+00:04:02,149 --> 00:04:02,159
+legible and querable by default. I've
+ 
+
+203
+00:04:02,159 --> 00:04:03,750
+legible and querable by default. I've
+seen teams that do this cut their
+
+204
+00:04:03,750 --> 00:04:03,760
+seen teams that do this cut their
+ 
+
+205
+00:04:03,760 --> 00:04:05,750
+seen teams that do this cut their
+engineering sprint time in half and get
+
+206
+00:04:05,750 --> 00:04:05,760
+engineering sprint time in half and get
+ 
+
+207
+00:04:05,760 --> 00:04:09,750
+engineering sprint time in half and get
+close to 10x more done in that time. The
+
+208
+00:04:09,750 --> 00:04:09,760
+close to 10x more done in that time. The
+ 
+
+209
+00:04:09,760 --> 00:04:11,589
+close to 10x more done in that time. The
+overarching principle here is that to
+
+210
+00:04:11,589 --> 00:04:11,599
+overarching principle here is that to
+ 
+
+211
+00:04:11,599 --> 00:04:13,670
+overarching principle here is that to
+get their full capabilities, you need to
+
+212
+00:04:13,670 --> 00:04:13,680
+get their full capabilities, you need to
+ 
+
+213
+00:04:13,680 --> 00:04:15,830
+get their full capabilities, you need to
+provide models with as much context as
+
+214
+00:04:15,830 --> 00:04:15,840
+provide models with as much context as
+ 
+
+215
+00:04:15,840 --> 00:04:18,069
+provide models with as much context as
+you would provide an employee. When you
+
+216
+00:04:18,069 --> 00:04:18,079
+you would provide an employee. When you
+ 
+
+217
+00:04:18,079 --> 00:04:20,069
+you would provide an employee. When you
+do this, your company stops operating as
+
+218
+00:04:20,069 --> 00:04:20,079
+do this, your company stops operating as
+ 
+
+219
+00:04:20,079 --> 00:04:22,069
+do this, your company stops operating as
+a open loop where information is
+
+220
+00:04:22,069 --> 00:04:22,079
+a open loop where information is
+ 
+
+221
+00:04:22,079 --> 00:04:24,390
+a open loop where information is
+fragmented and manually interpreted. It
+
+222
+00:04:24,390 --> 00:04:24,400
+fragmented and manually interpreted. It
+ 
+
+223
+00:04:24,400 --> 00:04:27,189
+fragmented and manually interpreted. It
+becomes instead a closed loop system.
+
+224
+00:04:27,189 --> 00:04:27,199
+becomes instead a closed loop system.
+ 
+
+225
+00:04:27,199 --> 00:04:29,590
+becomes instead a closed loop system.
+Status, decisions, and outcomes are
+
+226
+00:04:29,590 --> 00:04:29,600
+Status, decisions, and outcomes are
+ 
+
+227
+00:04:29,600 --> 00:04:31,830
+Status, decisions, and outcomes are
+continuously captured and fed back into
+
+228
+00:04:31,830 --> 00:04:31,840
+continuously captured and fed back into
+ 
+
+229
+00:04:31,840 --> 00:04:34,469
+continuously captured and fed back into
+this intelligence layer. The result is a
+
+230
+00:04:34,469 --> 00:04:34,479
+this intelligence layer. The result is a
+ 
+
+231
+00:04:34,479 --> 00:04:36,950
+this intelligence layer. The result is a
+system that always has an upto-date view
+
+232
+00:04:36,950 --> 00:04:36,960
+system that always has an upto-date view
+ 
+
+233
+00:04:36,960 --> 00:04:39,510
+system that always has an upto-date view
+of what's actually happening. There's
+
+234
+00:04:39,510 --> 00:04:39,520
+of what's actually happening. There's
+ 
+
+235
+00:04:39,520 --> 00:04:42,629
+of what's actually happening. There's
+also a new paradigm emerging for how the
+
+236
+00:04:42,629 --> 00:04:42,639
+also a new paradigm emerging for how the
+ 
+
+237
+00:04:42,639 --> 00:04:45,909
+also a new paradigm emerging for how the
+highest velocity companies build product
+
+238
+00:04:45,909 --> 00:04:45,919
+highest velocity companies build product
+ 
+
+239
+00:04:45,919 --> 00:04:48,790
+highest velocity companies build product
+AI software factories. If you're
+
+240
+00:04:48,790 --> 00:04:48,800
+AI software factories. If you're
+ 
+
+241
+00:04:48,800 --> 00:04:50,710
+AI software factories. If you're
+familiar with the testdriven development
+
+242
+00:04:50,710 --> 00:04:50,720
+familiar with the testdriven development
+ 
+
+243
+00:04:50,720 --> 00:04:53,510
+familiar with the testdriven development
+or TDD, this is the next evolution of
+
+244
+00:04:53,510 --> 00:04:53,520
+or TDD, this is the next evolution of
+ 
+
+245
+00:04:53,520 --> 00:04:56,550
+or TDD, this is the next evolution of
+that. With software factories, humans
+
+246
+00:04:56,550 --> 00:04:56,560
+that. With software factories, humans
+ 
+
+247
+00:04:56,560 --> 00:04:59,189
+that. With software factories, humans
+write a spec and a set of tests that
+
+248
+00:04:59,189 --> 00:04:59,199
+write a spec and a set of tests that
+ 
+
+249
+00:04:59,199 --> 00:05:02,150
+write a spec and a set of tests that
+define success and then AI agents
+
+250
+00:05:02,150 --> 00:05:02,160
+define success and then AI agents
+ 
+
+251
+00:05:02,160 --> 00:05:04,790
+define success and then AI agents
+generate the implementation
+
+252
+00:05:04,790 --> 00:05:04,800
+generate the implementation
+ 
+
+253
+00:05:04,800 --> 00:05:07,830
+generate the implementation
+and code and iterate until the test
+
+254
+00:05:07,830 --> 00:05:07,840
+and code and iterate until the test
+ 
+
+255
+00:05:07,840 --> 00:05:10,790
+and code and iterate until the test
+pass. The human defines what to build
+
+256
+00:05:10,790 --> 00:05:10,800
+pass. The human defines what to build
+ 
+
+257
+00:05:10,800 --> 00:05:13,270
+pass. The human defines what to build
+and judges the output. The actual code
+
+258
+00:05:13,270 --> 00:05:13,280
+and judges the output. The actual code
+ 
+
+259
+00:05:13,280 --> 00:05:15,909
+and judges the output. The actual code
+is the agent's job. Some companies have
+
+260
+00:05:15,909 --> 00:05:15,919
+is the agent's job. Some companies have
+ 
+
+261
+00:05:15,919 --> 00:05:17,749
+is the agent's job. Some companies have
+already pushed this to the point where
+
+262
+00:05:17,749 --> 00:05:17,759
+already pushed this to the point where
+ 
+
+263
+00:05:17,759 --> 00:05:21,590
+already pushed this to the point where
+their repos contain no handwritten code,
+
+264
+00:05:21,590 --> 00:05:21,600
+their repos contain no handwritten code,
+ 
+
+265
+00:05:21,600 --> 00:05:24,710
+their repos contain no handwritten code,
+just specs and test harnesses. Strong
+
+266
+00:05:24,710 --> 00:05:24,720
+just specs and test harnesses. Strong
+ 
+
+267
+00:05:24,720 --> 00:05:27,749
+just specs and test harnesses. Strong
+DM's AI team is an example of how to do
+
+268
+00:05:27,749 --> 00:05:27,759
+DM's AI team is an example of how to do
+ 
+
+269
+00:05:27,759 --> 00:05:29,990
+DM's AI team is an example of how to do
+this. Their end goal was a system that
+
+270
+00:05:29,990 --> 00:05:30,000
+this. Their end goal was a system that
+ 
+
+271
+00:05:30,000 --> 00:05:32,070
+this. Their end goal was a system that
+essentially eliminated the need for a
+
+272
+00:05:32,070 --> 00:05:32,080
+essentially eliminated the need for a
+ 
+
+273
+00:05:32,080 --> 00:05:35,350
+essentially eliminated the need for a
+human to write or review code. And so
+
+274
+00:05:35,350 --> 00:05:35,360
+human to write or review code. And so
+ 
+
+275
+00:05:35,360 --> 00:05:37,270
+human to write or review code. And so
+they built their own software factory
+
+276
+00:05:37,270 --> 00:05:37,280
+they built their own software factory
+ 
+
+277
+00:05:37,280 --> 00:05:39,110
+they built their own software factory
+where specs and a scenario based
+
+278
+00:05:39,110 --> 00:05:39,120
+where specs and a scenario based
+ 
+
+279
+00:05:39,120 --> 00:05:41,590
+where specs and a scenario based
+validations drive agents to write tests
+
+280
+00:05:41,590 --> 00:05:41,600
+validations drive agents to write tests
+ 
+
+281
+00:05:41,600 --> 00:05:44,390
+validations drive agents to write tests
+and iterate on code until it meets a
+
+282
+00:05:44,390 --> 00:05:44,400
+and iterate on code until it meets a
+ 
+
+283
+00:05:44,400 --> 00:05:47,510
+and iterate on code until it meets a
+probabilistic satisfaction threshold and
+
+284
+00:05:47,510 --> 00:05:47,520
+probabilistic satisfaction threshold and
+ 
+
+285
+00:05:47,520 --> 00:05:50,150
+probabilistic satisfaction threshold and
+it works. This is how you achieve the
+
+286
+00:05:50,150 --> 00:05:50,160
+it works. This is how you achieve the
+ 
+
+287
+00:05:50,160 --> 00:05:53,430
+it works. This is how you achieve the
+thousandx engineer that Steve Jay talks
+
+288
+00:05:53,430 --> 00:05:53,440
+thousandx engineer that Steve Jay talks
+ 
+
+289
+00:05:53,440 --> 00:05:55,990
+thousandx engineer that Steve Jay talks
+about by surrounding a single engineer
+
+290
+00:05:55,990 --> 00:05:56,000
+about by surrounding a single engineer
+ 
+
+291
+00:05:56,000 --> 00:05:57,990
+about by surrounding a single engineer
+with a system of agents that enable them
+
+292
+00:05:57,990 --> 00:05:58,000
+with a system of agents that enable them
+ 
+
+293
+00:05:58,000 --> 00:06:00,230
+with a system of agents that enable them
+to build things they would have never
+
+294
+00:06:00,230 --> 00:06:00,240
+to build things they would have never
+ 
+
+295
+00:06:00,240 --> 00:06:03,189
+to build things they would have never
+been able to build before. The era of
+
+296
+00:06:03,189 --> 00:06:03,199
+been able to build before. The era of
+ 
+
+297
+00:06:03,199 --> 00:06:06,710
+been able to build before. The era of
+the thousand or even 10,000 X engineer
+
+298
+00:06:06,710 --> 00:06:06,720
+the thousand or even 10,000 X engineer
+ 
+
+299
+00:06:06,720 --> 00:06:08,710
+the thousand or even 10,000 X engineer
+is here. One implication of building
+
+300
+00:06:08,710 --> 00:06:08,720
+is here. One implication of building
+ 
+
+301
+00:06:08,720 --> 00:06:10,950
+is here. One implication of building
+your company this way with AI loops
+
+302
+00:06:10,950 --> 00:06:10,960
+your company this way with AI loops
+ 
+
+303
+00:06:10,960 --> 00:06:13,350
+your company this way with AI loops
+everywhere, a queryable organization and
+
+304
+00:06:13,350 --> 00:06:13,360
+everywhere, a queryable organization and
+ 
+
+305
+00:06:13,360 --> 00:06:15,430
+everywhere, a queryable organization and
+software factories is that the classic
+
+306
+00:06:15,430 --> 00:06:15,440
+software factories is that the classic
+ 
+
+307
+00:06:15,440 --> 00:06:17,430
+software factories is that the classic
+management hierarchy no longer makes
+
+308
+00:06:17,430 --> 00:06:17,440
+management hierarchy no longer makes
+ 
+
+309
+00:06:17,440 --> 00:06:19,749
+management hierarchy no longer makes
+sense. In the old world, you needed
+
+310
+00:06:19,749 --> 00:06:19,759
+sense. In the old world, you needed
+ 
+
+311
+00:06:19,759 --> 00:06:21,990
+sense. In the old world, you needed
+middle managers and coordinators to
+
+312
+00:06:21,990 --> 00:06:22,000
+middle managers and coordinators to
+ 
+
+313
+00:06:22,000 --> 00:06:25,110
+middle managers and coordinators to
+route information inefficiently up and
+
+314
+00:06:25,110 --> 00:06:25,120
+route information inefficiently up and
+ 
+
+315
+00:06:25,120 --> 00:06:28,469
+route information inefficiently up and
+down an organization. In the new world,
+
+316
+00:06:28,469 --> 00:06:28,479
+down an organization. In the new world,
+ 
+
+317
+00:06:28,479 --> 00:06:30,629
+down an organization. In the new world,
+the intelligence layer serves that
+
+318
+00:06:30,629 --> 00:06:30,639
+the intelligence layer serves that
+ 
+
+319
+00:06:30,639 --> 00:06:33,590
+the intelligence layer serves that
+purpose. If your company is queryable,
+
+320
+00:06:33,590 --> 00:06:33,600
+purpose. If your company is queryable,
+ 
+
+321
+00:06:33,600 --> 00:06:37,189
+purpose. If your company is queryable,
+artifactrich, and legible to an AI, you
+
+322
+00:06:37,189 --> 00:06:37,199
+artifactrich, and legible to an AI, you
+ 
+
+323
+00:06:37,199 --> 00:06:40,150
+artifactrich, and legible to an AI, you
+should have almost no human middleware.
+
+324
+00:06:40,150 --> 00:06:40,160
+should have almost no human middleware.
+ 
+
+325
+00:06:40,160 --> 00:06:41,909
+should have almost no human middleware.
+This matters because your company's
+
+326
+00:06:41,909 --> 00:06:41,919
+This matters because your company's
+ 
+
+327
+00:06:41,919 --> 00:06:45,270
+This matters because your company's
+velocities is only as fast as its
+
+328
+00:06:45,270 --> 00:06:45,280
+velocities is only as fast as its
+ 
+
+329
+00:06:45,280 --> 00:06:47,990
+velocities is only as fast as its
+information flow. Every layer of human
+
+330
+00:06:47,990 --> 00:06:48,000
+information flow. Every layer of human
+ 
+
+331
+00:06:48,000 --> 00:06:50,710
+information flow. Every layer of human
+routing you can remove is the direct
+
+332
+00:06:50,710 --> 00:06:50,720
+routing you can remove is the direct
+ 
+
+333
+00:06:50,720 --> 00:06:54,070
+routing you can remove is the direct
+speed gain. A great example is what Jack
+
+334
+00:06:54,070 --> 00:06:54,080
+speed gain. A great example is what Jack
+ 
+
+335
+00:06:54,080 --> 00:06:56,550
+speed gain. A great example is what Jack
+Dorsey is doing over at Block. After
+
+336
+00:06:56,550 --> 00:06:56,560
+Dorsey is doing over at Block. After
+ 
+
+337
+00:06:56,560 --> 00:06:59,510
+Dorsey is doing over at Block. After
+going deep on the tools, he's come to
+
+338
+00:06:59,510 --> 00:06:59,520
+going deep on the tools, he's come to
+ 
+
+339
+00:06:59,520 --> 00:07:02,230
+going deep on the tools, he's come to
+the same conclusion many have. This is
+
+340
+00:07:02,230 --> 00:07:02,240
+the same conclusion many have. This is
+ 
+
+341
+00:07:02,240 --> 00:07:04,230
+the same conclusion many have. This is
+about more than just incremental
+
+342
+00:07:04,230 --> 00:07:04,240
+about more than just incremental
+ 
+
+343
+00:07:04,240 --> 00:07:06,870
+about more than just incremental
+productivity gains. His view is that if
+
+344
+00:07:06,870 --> 00:07:06,880
+productivity gains. His view is that if
+ 
+
+345
+00:07:06,880 --> 00:07:08,390
+productivity gains. His view is that if
+you keep the same org chart and
+
+346
+00:07:08,390 --> 00:07:08,400
+you keep the same org chart and
+ 
+
+347
+00:07:08,400 --> 00:07:10,390
+you keep the same org chart and
+management structure, you've missed the
+
+348
+00:07:10,390 --> 00:07:10,400
+management structure, you've missed the
+ 
+
+349
+00:07:10,400 --> 00:07:13,029
+management structure, you've missed the
+shift entirely. The company itself has
+
+350
+00:07:13,029 --> 00:07:13,039
+shift entirely. The company itself has
+ 
+
+351
+00:07:13,039 --> 00:07:15,029
+shift entirely. The company itself has
+to be rebuilt as an intelligence layer
+
+352
+00:07:15,029 --> 00:07:15,039
+to be rebuilt as an intelligence layer
+ 
+
+353
+00:07:15,039 --> 00:07:17,110
+to be rebuilt as an intelligence layer
+with humans at the edge guiding it
+
+354
+00:07:17,110 --> 00:07:17,120
+with humans at the edge guiding it
+ 
+
+355
+00:07:17,120 --> 00:07:18,870
+with humans at the edge guiding it
+rather than routing information through
+
+356
+00:07:18,870 --> 00:07:18,880
+rather than routing information through
+ 
+
+357
+00:07:18,880 --> 00:07:21,270
+rather than routing information through
+it. Going forward, Jack suggests every
+
+358
+00:07:21,270 --> 00:07:21,280
+it. Going forward, Jack suggests every
+ 
+
+359
+00:07:21,280 --> 00:07:23,189
+it. Going forward, Jack suggests every
+company will have three employee
+
+360
+00:07:23,189 --> 00:07:23,199
+company will have three employee
+ 
+
+361
+00:07:23,199 --> 00:07:25,510
+company will have three employee
+archetypes. The first is the individual
+
+362
+00:07:25,510 --> 00:07:25,520
+archetypes. The first is the individual
+ 
+
+363
+00:07:25,520 --> 00:07:28,550
+archetypes. The first is the individual
+contributor or IC basically the builder
+
+364
+00:07:28,550 --> 00:07:28,560
+contributor or IC basically the builder
+ 
+
+365
+00:07:28,560 --> 00:07:30,710
+contributor or IC basically the builder
+operator. This is someone who directly
+
+366
+00:07:30,710 --> 00:07:30,720
+operator. This is someone who directly
+ 
+
+367
+00:07:30,720 --> 00:07:32,950
+operator. This is someone who directly
+makes and runs things in an AI native
+
+368
+00:07:32,950 --> 00:07:32,960
+makes and runs things in an AI native
+ 
+
+369
+00:07:32,960 --> 00:07:34,710
+makes and runs things in an AI native
+company. This is not limited to
+
+370
+00:07:34,710 --> 00:07:34,720
+company. This is not limited to
+ 
+
+371
+00:07:34,720 --> 00:07:38,629
+company. This is not limited to
+engineers. Everyone builds and ops
+
+372
+00:07:38,629 --> 00:07:38,639
+engineers. Everyone builds and ops
+ 
+
+373
+00:07:38,639 --> 00:07:41,189
+engineers. Everyone builds and ops
+support sales. Everyone comes to
+
+374
+00:07:41,189 --> 00:07:41,199
+support sales. Everyone comes to
+ 
+
+375
+00:07:41,199 --> 00:07:43,430
+support sales. Everyone comes to
+meetings with working prototypes not
+
+376
+00:07:43,430 --> 00:07:43,440
+meetings with working prototypes not
+ 
+
+377
+00:07:43,440 --> 00:07:46,870
+meetings with working prototypes not
+pitch decks. Second is the DRRI the
+
+378
+00:07:46,870 --> 00:07:46,880
+pitch decks. Second is the DRRI the
+ 
+
+379
+00:07:46,880 --> 00:07:49,430
+pitch decks. Second is the DRRI the
+directly responsible individual focused
+
+380
+00:07:49,430 --> 00:07:49,440
+directly responsible individual focused
+ 
+
+381
+00:07:49,440 --> 00:07:51,909
+directly responsible individual focused
+on strategy and customer outcomes. This
+
+382
+00:07:51,909 --> 00:07:51,919
+on strategy and customer outcomes. This
+ 
+
+383
+00:07:51,919 --> 00:07:53,830
+on strategy and customer outcomes. This
+is not a classic manager is the person
+
+384
+00:07:53,830 --> 00:07:53,840
+is not a classic manager is the person
+ 
+
+385
+00:07:53,840 --> 00:07:56,070
+is not a classic manager is the person
+with a clear responsibility for the
+
+386
+00:07:56,070 --> 00:07:56,080
+with a clear responsibility for the
+ 
+
+387
+00:07:56,080 --> 00:07:59,189
+with a clear responsibility for the
+result. One person, one outcome, no
+
+388
+00:07:59,189 --> 00:07:59,199
+result. One person, one outcome, no
+ 
+
+389
+00:07:59,199 --> 00:08:01,990
+result. One person, one outcome, no
+hiding. The third is the AI founder
+
+390
+00:08:01,990 --> 00:08:02,000
+hiding. The third is the AI founder
+ 
+
+391
+00:08:02,000 --> 00:08:05,189
+hiding. The third is the AI founder
+type. This person still builds, still
+
+392
+00:08:05,189 --> 00:08:05,199
+type. This person still builds, still
+ 
+
+393
+00:08:05,199 --> 00:08:07,589
+type. This person still builds, still
+coaches and leads by example. If you're
+
+394
+00:08:07,589 --> 00:08:07,599
+coaches and leads by example. If you're
+ 
+
+395
+00:08:07,599 --> 00:08:09,830
+coaches and leads by example. If you're
+the founder, this needs to be you at the
+
+396
+00:08:09,830 --> 00:08:09,840
+the founder, this needs to be you at the
+ 
+
+397
+00:08:09,840 --> 00:08:12,309
+the founder, this needs to be you at the
+forefront, showing your team what
+
+398
+00:08:12,309 --> 00:08:12,319
+forefront, showing your team what
+ 
+
+399
+00:08:12,319 --> 00:08:14,710
+forefront, showing your team what
+massive capability gains look like, not
+
+400
+00:08:14,710 --> 00:08:14,720
+massive capability gains look like, not
+ 
+
+401
+00:08:14,720 --> 00:08:16,950
+massive capability gains look like, not
+delegating your AI strategy to someone
+
+402
+00:08:16,950 --> 00:08:16,960
+delegating your AI strategy to someone
+ 
+
+403
+00:08:16,960 --> 00:08:19,270
+delegating your AI strategy to someone
+else. With this structure, companies
+
+404
+00:08:19,270 --> 00:08:19,280
+else. With this structure, companies
+ 
+
+405
+00:08:19,280 --> 00:08:21,430
+else. With this structure, companies
+will be able to get outsized results
+
+406
+00:08:21,430 --> 00:08:21,440
+will be able to get outsized results
+ 
+
+407
+00:08:21,440 --> 00:08:23,830
+will be able to get outsized results
+with much smaller teams. Maximizing
+
+408
+00:08:23,830 --> 00:08:23,840
+with much smaller teams. Maximizing
+ 
+
+409
+00:08:23,840 --> 00:08:26,629
+with much smaller teams. Maximizing
+token usage, not headcount, will be the
+
+410
+00:08:26,629 --> 00:08:26,639
+token usage, not headcount, will be the
+ 
+
+411
+00:08:26,639 --> 00:08:28,629
+token usage, not headcount, will be the
+critical shift. The best companies will
+
+412
+00:08:28,629 --> 00:08:28,639
+critical shift. The best companies will
+ 
+
+413
+00:08:28,639 --> 00:08:30,950
+critical shift. The best companies will
+be the ones that are token maxing. Think
+
+414
+00:08:30,950 --> 00:08:30,960
+be the ones that are token maxing. Think
+ 
+
+415
+00:08:30,960 --> 00:08:32,790
+be the ones that are token maxing. Think
+of the trade-off this way. One person
+
+416
+00:08:32,790 --> 00:08:32,800
+of the trade-off this way. One person
+ 
+
+417
+00:08:32,800 --> 00:08:35,190
+of the trade-off this way. One person
+with AI tools can be the equivalent of
+
+418
+00:08:35,190 --> 00:08:35,200
+with AI tools can be the equivalent of
+ 
+
+419
+00:08:35,200 --> 00:08:37,750
+with AI tools can be the equivalent of
+what used to take a large engineering
+
+420
+00:08:37,750 --> 00:08:37,760
+what used to take a large engineering
+ 
+
+421
+00:08:37,760 --> 00:08:41,029
+what used to take a large engineering
+team at a preAI company. That means
+
+422
+00:08:41,029 --> 00:08:41,039
+team at a preAI company. That means
+ 
+
+423
+00:08:41,039 --> 00:08:43,670
+team at a preAI company. That means
+dramatically leaner engineering, design,
+
+424
+00:08:43,670 --> 00:08:43,680
+dramatically leaner engineering, design,
+ 
+
+425
+00:08:43,680 --> 00:08:46,230
+dramatically leaner engineering, design,
+HR, and admin teams. And so you should
+
+426
+00:08:46,230 --> 00:08:46,240
+HR, and admin teams. And so you should
+ 
+
+427
+00:08:46,240 --> 00:08:48,550
+HR, and admin teams. And so you should
+be willing to run an uncomfortably high
+
+428
+00:08:48,550 --> 00:08:48,560
+be willing to run an uncomfortably high
+ 
+
+429
+00:08:48,560 --> 00:08:51,430
+be willing to run an uncomfortably high
+API bill because it's replacing what
+
+430
+00:08:51,430 --> 00:08:51,440
+API bill because it's replacing what
+ 
+
+431
+00:08:51,440 --> 00:08:53,750
+API bill because it's replacing what
+would have taken a far more expensive
+
+432
+00:08:53,750 --> 00:08:53,760
+would have taken a far more expensive
+ 
+
+433
+00:08:53,760 --> 00:08:57,030
+would have taken a far more expensive
+and inflated headcount. But don't just
+
+434
+00:08:57,030 --> 00:08:57,040
+and inflated headcount. But don't just
+ 
+
+435
+00:08:57,040 --> 00:09:00,150
+and inflated headcount. But don't just
+take my word for any of this. You cannot
+
+436
+00:09:00,150 --> 00:09:00,160
+take my word for any of this. You cannot
+ 
+
+437
+00:09:00,160 --> 00:09:02,470
+take my word for any of this. You cannot
+outsource your conviction on the power
+
+438
+00:09:02,470 --> 00:09:02,480
+outsource your conviction on the power
+ 
+
+439
+00:09:02,480 --> 00:09:04,949
+outsource your conviction on the power
+of these tools. You need to develop it
+
+440
+00:09:04,949 --> 00:09:04,959
+of these tools. You need to develop it
+ 
+
+441
+00:09:04,959 --> 00:09:06,949
+of these tools. You need to develop it
+yourself by actually sitting with coding
+
+442
+00:09:06,949 --> 00:09:06,959
+yourself by actually sitting with coding
+ 
+
+443
+00:09:06,959 --> 00:09:08,790
+yourself by actually sitting with coding
+agents and using them until you start to
+
+444
+00:09:08,790 --> 00:09:08,800
+agents and using them until you start to
+ 
+
+445
+00:09:08,800 --> 00:09:11,430
+agents and using them until you start to
+break your own priors about what is now
+
+446
+00:09:11,430 --> 00:09:11,440
+break your own priors about what is now
+ 
+
+447
+00:09:11,440 --> 00:09:13,750
+break your own priors about what is now
+possible to build. If you are an early
+
+448
+00:09:13,750 --> 00:09:13,760
+possible to build. If you are an early
+ 
+
+449
+00:09:13,760 --> 00:09:16,150
+possible to build. If you are an early
+stage founder, you have a huge advantage
+
+450
+00:09:16,150 --> 00:09:16,160
+stage founder, you have a huge advantage
+ 
+
+451
+00:09:16,160 --> 00:09:18,150
+stage founder, you have a huge advantage
+in getting ahead on this. You don't have
+
+452
+00:09:18,150 --> 00:09:18,160
+in getting ahead on this. You don't have
+ 
+
+453
+00:09:18,160 --> 00:09:20,870
+in getting ahead on this. You don't have
+legacy systems in orchards or thousands
+
+454
+00:09:20,870 --> 00:09:20,880
+legacy systems in orchards or thousands
+ 
+
+455
+00:09:20,880 --> 00:09:22,790
+legacy systems in orchards or thousands
+of people to retrain. You are small
+
+456
+00:09:22,790 --> 00:09:22,800
+of people to retrain. You are small
+ 
+
+457
+00:09:22,800 --> 00:09:24,870
+of people to retrain. You are small
+enough to build your company right from
+
+458
+00:09:24,870 --> 00:09:24,880
+enough to build your company right from
+ 
+
+459
+00:09:24,880 --> 00:09:27,509
+enough to build your company right from
+day one. The opposite is the case for
+
+460
+00:09:27,509 --> 00:09:27,519
+day one. The opposite is the case for
+ 
+
+461
+00:09:27,519 --> 00:09:29,350
+day one. The opposite is the case for
+existing companies. They have to
+
+462
+00:09:29,350 --> 00:09:29,360
+existing companies. They have to
+ 
+
+463
+00:09:29,360 --> 00:09:32,470
+existing companies. They have to
+maintain and grow a live product while
+
+464
+00:09:32,470 --> 00:09:32,480
+maintain and grow a live product while
+ 
+
+465
+00:09:32,480 --> 00:09:35,190
+maintain and grow a live product while
+unwinding years of standard operating
+
+466
+00:09:35,190 --> 00:09:35,200
+unwinding years of standard operating
+ 
+
+467
+00:09:35,200 --> 00:09:37,269
+unwinding years of standard operating
+procedures and core assumptions about
+
+468
+00:09:37,269 --> 00:09:37,279
+procedures and core assumptions about
+ 
+
+469
+00:09:37,279 --> 00:09:39,509
+procedures and core assumptions about
+how software gets built. Some companies
+
+470
+00:09:39,509 --> 00:09:39,519
+how software gets built. Some companies
+ 
+
+471
+00:09:39,519 --> 00:09:41,509
+how software gets built. Some companies
+can achieve this by spinning up small
+
+472
+00:09:41,509 --> 00:09:41,519
+can achieve this by spinning up small
+ 
+
+473
+00:09:41,519 --> 00:09:43,509
+can achieve this by spinning up small
+internal skunk work teams that can build
+
+474
+00:09:43,509 --> 00:09:43,519
+internal skunk work teams that can build
+ 
+
+475
+00:09:43,519 --> 00:09:45,590
+internal skunk work teams that can build
+AI native systems from scratch separate
+
+476
+00:09:45,590 --> 00:09:45,600
+AI native systems from scratch separate
+ 
+
+477
+00:09:45,600 --> 00:09:47,509
+AI native systems from scratch separate
+from the core business. Mutiny is a
+
+478
+00:09:47,509 --> 00:09:47,519
+from the core business. Mutiny is a
+ 
+
+479
+00:09:47,519 --> 00:09:50,790
+from the core business. Mutiny is a
+great example of this. But for most,
+
+480
+00:09:50,790 --> 00:09:50,800
+great example of this. But for most,
+ 
+
+481
+00:09:50,800 --> 00:09:53,030
+great example of this. But for most,
+every change to their core processes
+
+482
+00:09:53,030 --> 00:09:53,040
+every change to their core processes
+ 
+
+483
+00:09:53,040 --> 00:09:54,870
+every change to their core processes
+risk breaking something that already
+
+484
+00:09:54,870 --> 00:09:54,880
+risk breaking something that already
+ 
+
+485
+00:09:54,880 --> 00:09:57,670
+risk breaking something that already
+works. So by their nature, these large
+
+486
+00:09:57,670 --> 00:09:57,680
+works. So by their nature, these large
+ 
+
+487
+00:09:57,680 --> 00:10:00,310
+works. So by their nature, these large
+companies will have a much harder time
+
+488
+00:10:00,310 --> 00:10:00,320
+companies will have a much harder time
+ 
+
+489
+00:10:00,320 --> 00:10:03,750
+companies will have a much harder time
+going AI native. Startups don't have
+
+490
+00:10:03,750 --> 00:10:03,760
+going AI native. Startups don't have
+ 
+
+491
+00:10:03,760 --> 00:10:06,230
+going AI native. Startups don't have
+that constraint and that's a major edge
+
+492
+00:10:06,230 --> 00:10:06,240
+that constraint and that's a major edge
+ 
+
+493
+00:10:06,240 --> 00:10:08,470
+that constraint and that's a major edge
+to take advantage of. You can design
+
+494
+00:10:08,470 --> 00:10:08,480
+to take advantage of. You can design
+ 
+
+495
+00:10:08,480 --> 00:10:10,870
+to take advantage of. You can design
+your systems, workflows and culture
+
+496
+00:10:10,870 --> 00:10:10,880
+your systems, workflows and culture
+ 
+
+497
+00:10:10,880 --> 00:10:14,150
+your systems, workflows and culture
+around AI from the start and as a result
+
+498
+00:10:14,150 --> 00:10:14,160
+around AI from the start and as a result
+ 
+
+499
+00:10:14,160 --> 00:10:16,470
+around AI from the start and as a result
+operate thousand times faster than the
+
+500
+00:10:16,470 --> 00:10:16,480
+operate thousand times faster than the
+ 
+
+501
+00:10:16,480 --> 00:10:22,630
+operate thousand times faster than the
+incumbents.
+
+502
+00:10:22,630 --> 00:10:22,640
+
+ 
+
+503
+00:10:22,640 --> 00:10:26,040
+
+Same
+

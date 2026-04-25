@@ -37,6 +37,11 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[langchain]] · AI 应用开发框架公司；`deepagents` harness library；2026-03 Trivedy 博客给本 wiki 提供 harness 议题第 3 视角 · #organization #ai-company #agent-tooling
 - [[vivek-trivedy]] · LangChain 工程师；《The Anatomy of an Agent Harness》作者；"Agent = Model + Harness" 等式 + 9 primitives 清单提出者 · #author #langchain #harness-engineering
 - [[agentskills-io]] · Anthropic 原创的 Agent Skills 开放标准；SKILL.md 规范 + 三级 progressive disclosure + 35+ 产品 adopter · #open-standard #specification #skill-spec
+- [[gstack]] · [[garry-tan]] 开源 Claude Code 技能集；视频时刻 ~70k stars / 28+ skills；built into Conductor IDE；自评是 [[thin-harness-fat-skills]] 的 "my implementation" · #tool #harness #skill-collection
+- [[diana-hu]] · YC partner（[UNVERIFIED] 姓未在视频字幕中给出，猜 Hu）；2026-04-24 视频提出 [[ai-as-company-os]] 框架 · #author #investor #yc #ai-strategy
+- [[flowershu]] · 中文 AI 圈技术作者（GitHub `alchaincyf` / WeChat 花叔 / Bilibili AI 进化论-花生）；橙皮书系列作者（《Hermes Agent 从入门到精通》v260407 / 《Harness Engineering》前作） · #author #chinese-ai-community #technical-writer
+- [[honcho]] · Plastic Labs 用户建模系统；Hermes Agent 可选外挂；[[dialectical-user-modeling]] 实施 · #tool #user-modeling #plastic-labs
+- [[mitchell-hashimoto]] · Terraform 创造者；Harness Engineering 概念命名者；Ghostty 终端模拟器 · #author #developer #harness-engineering
 
 ## Concepts
 <!-- 跨文档提取的核心概念 -->
@@ -76,6 +81,14 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[dopamine-fasting]] · "多巴胺断食"辟谣 + Sepah 原 CBT 温和版操作 · #debunking #cbt #mindfulness
 - [[addiction-recovery]] · Harvard 5 步戒瘾框架；对应 dopamine 强化回路的逆向工程 · #addiction #recovery
 - [[progressive-disclosure]] · Metadata / Body / Resources 三级按需加载；agentskills.io canonical 实施 + Trivedy harness primitive · #llm-architecture #context-engineering #skill-spec
+- [[multi-agent-worktree-orchestration]] · 每 worktree 1 work item × N 并行（Tan 实测 10-15 → 10-50 PRs/day）；并行自治 + 串行人工 gate · #agent-orchestration #worktree #parallel
+- [[adversarial-review-skill]] · skill 角色不只产出，也包括"反方批判 + autofix"；Tan GStack 实证 6/10 → 8/10 两轮 · #skill-design #quality-gate #harness
+- [[qa-tooling-cost-reduction]] · Playwright CLI 替 Chrome MCP 单 action 75× 加速；harness primitive 优化范例 · #harness #tooling #cost-reduction
+- [[ai-as-company-os]] · [[diana-hu\|Diana]]：AI 不是公司用的工具，是公司运行其上的 OS；流过智能层 + 持续学习 + 替核心管理函数 · #organization #ai-strategy #control-systems
+- [[closed-loop-company]] · [[diana-hu\|Diana]]：闭环 vs 开环组织（control systems framing）；[[ai-as-company-os]] 的运行时机制 · #organization #control-systems #ai-strategy
+- [[queryable-company]] · [[diana-hu\|Diana]]：公司对 AI legible；[[closed-loop-company]] 的数据基础——artifact 集中 + AI 可读 · #organization #data-architecture #ai-strategy
+- [[dialectical-user-modeling]] · [[honcho]]：捕用户陈述偏好 vs 实际行为偏好的矛盾；多维身份推断 · #user-modeling #ai-memory #honcho
+- [[in-on-out-of-the-loop]] · Kief Morris 框架：人类 AI 监督三态（in / on / out）；Hermes self-improving 把讨论推到 4th state · #agent-supervision #autonomy #control
 
 ## Sources
 <!-- raw/ 下的原始资料，由 /ingest 自动维护 -->
@@ -95,6 +108,9 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[hermes-vs-openclaw]] · 最佳拍档 2026-04-17 视频；Hermes Agent vs OpenClaw 架构大对比 + EvoMap 抄袭风波 · #agent #architecture-comparison #youtube-summary
 - [[langchain-anatomy-of-agent-harness]] · Trivedy 2026-03-10 LangChain 博客：harness 等式 + 9 primitives + Ralph Loop + Context Rot + Model-Harness 共进化 · #harness #langchain #core
 - [[agentskills-io-standard]] · 2026-04-22 /ingest agentskills.io 三页；SKILL.md 规范 + 必填字段 + progressive disclosure + 35+ adopter；OpenClaw/Hermes 接入状态待验证 · #open-standard #skill-spec #anthropic
+- [[yc-garry-tan-claude-code-as-team]] · YC 2026-04-23 Tan 21:49 视频；GStack live demo + 多 agent worktree 编排 + adversarial review + Playwright CLI；命名 GStack 为 [[thin-harness-fat-skills]] 实施 · #garry-tan #gstack #claude-code #yc
+- [[yc-diana-ai-as-company-os]] · YC 2026-04-24 [[diana-hu\|Diana]] 10:27 视频；AI 是公司 OS / 闭环组织 / queryable company / 1000x engineer / 中层管理消失；战略层与 Tan 工程层互补 · #diana-hu #yc #ai-strategy #organization
+- [[hermes-orange-book-flowershu]] · 花叔《Hermes Agent 从入门到精通》v260407（2026-04-07）；5 部 17 节；解 agentskills.io adoption + 引入 Honcho 辩证建模 / Kief Morris on-the-loop / 自改进上限论；引入 5 vs 3 层安全新冲突 · #hermes-agent #methodology #flowershu #chinese-source
 
 ## Events
 <!-- 时间相关条目（可选） -->
@@ -102,6 +118,7 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[anthropic-claude-code-source-leak-2026-03-31]] · Anthropic 意外把 Claude Code 512k 行源码推到 npm · #event #anthropic
 - [[memex-to-llm-wiki]] · 1945 Bush Memex → 2026 LLM Wiki 的 81 年历史线 · #history #synthesis
 - [[hermes-openclaw-vs-my-wiki-design]] · 自反对照：Hermes/OpenClaw 架构 vs 本 wiki 三层结构的同构性 · #synthesis #meta #karpathy
+- [[yc-engineer-vs-org-architecture]] · Tan engineer-level + Diana org-level 互补 AI 架构；同一 Yegge 1000x 两层贡献；5 层复利同构链 · #synthesis #yc #ai-strategy
 
 ## Decisions
 <!-- ADR 风格的决策记录 -->
