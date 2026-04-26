@@ -111,6 +111,7 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[yc-garry-tan-claude-code-as-team]] · YC 2026-04-23 Tan 21:49 视频；GStack live demo + 多 agent worktree 编排 + adversarial review + Playwright CLI；命名 GStack 为 [[thin-harness-fat-skills]] 实施 · #garry-tan #gstack #claude-code #yc
 - [[yc-diana-ai-as-company-os]] · YC 2026-04-24 [[diana-hu\|Diana]] 10:27 视频；AI 是公司 OS / 闭环组织 / queryable company / 1000x engineer / 中层管理消失；战略层与 Tan 工程层互补 · #diana-hu #yc #ai-strategy #organization
 - [[hermes-orange-book-flowershu]] · 花叔《Hermes Agent 从入门到精通》v260407（2026-04-07）；5 部 17 节；解 agentskills.io adoption + 引入 Honcho 辩证建模 / Kief Morris on-the-loop / 自改进上限论；引入 5 vs 3 层安全新冲突 · #hermes-agent #methodology #flowershu #chinese-source
+- [[hermes-agent-security-docs]] · 官方 Hermes security docs（2026-04-26 抓取）；**7 层防御**RESOLVE 5/3 层 Conflict；3 approval modes 是 [[in-on-out-of-the-loop]] 的产品级 canonical 实施；DM pairing 具体参数（OWASP/NIST 标准）+ Tirith 子进程检测 + SSRF 防护范围 · #hermes-agent #security #official-docs
 
 ## Events
 <!-- 时间相关条目（可选） -->
