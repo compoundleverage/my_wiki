@@ -26,7 +26,10 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[openclaw]] · 自托管 agent；Gateway 中心化 + 工作区模型；[[garry-tan]] 的自用产品（raw/garry-tan:144 "my OpenClaw"） · #agent #self-hosted-agent
 - [[nous-research]] · [[hermes-agent]] 研发团队；2022 Discord 社群 → 2023 公司化；open-source + 去中心化理念 · #ai-lab #organization
 - [[notebooklm]] · Google RAG 产品；[[persistent-wiki-vs-rag]] 扩张性实测对照基线 · #product #google #rag
-- [[mempalace]] · GitHub 工具（stub）；[[hermes-agent]] 的"AI 陪伴工具"沉浸感层候选 · #tool #stub
+- [[mempalace]] · GitHub 工具（stub）；[[hermes-agent]] 的"AI 陪伴工具"沉浸感层候选；2026-04-22 ai-zhiji 立项后角色重叠/降级 · #tool #stub
+- [[mufy]] · episodic AI 陪伴产品（[[projects/ai-zhiji]] reference baseline，PM 朋友月付 ~200 RMB） · #tool #ai-companion #stub
+- [[sillytavern]] · 开源 LLM frontend，scenario / persona 卡 roleplay；[[projects/ai-zhiji]] § Narrative Engine reference · #tool #roleplay #stub
+- [[gbrain]] · 第二大脑工具（stub）；用户研究兴趣点是"解决 my_wiki 类知识库扩张性问题"；touch=3 升级建 stub，substance 仍 NULL · #tool #knowledge-base #stub
 - [[screenstudio]] · GitHub 工具（stub）；与 [[clicky]] 教学软件组合候选 · #tool #stub
 - [[clicky]] · GitHub 工具（stub）；farzaa 作，与 [[screenstudio]] 组合候选 · #tool #stub
 - [[review-dot-plugin]] · 本 wiki 维护者自研 Obsidian 插件（v0.2.0，~54 行 JS）；三态圆点 fresh/stale/ok + 一键 `Cmd+Shift+R` mark-reviewed · #tool #plugin #self-authored
@@ -89,6 +92,9 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[queryable-company]] · [[diana-hu\|Diana]]：公司对 AI legible；[[closed-loop-company]] 的数据基础——artifact 集中 + AI 可读 · #organization #data-architecture #ai-strategy
 - [[dialectical-user-modeling]] · [[honcho]]：捕用户陈述偏好 vs 实际行为偏好的矛盾；多维身份推断 · #user-modeling #ai-memory #honcho
 - [[in-on-out-of-the-loop]] · Kief Morris 框架：人类 AI 监督三态（in / on / out）；Hermes self-improving 把讨论推到 4th state · #agent-supervision #autonomy #control
+- [[iteration-by-principle]] · 用户独立到达第 4 个 framework：1 小时 3 次 pivot，每次找上一版"还差一口气"的原因；craft > idea；ai-zhiji session 3 reference case · #methodology #craft #user-framework
+- [[compaction]] · Trivedy 命名的 [[context-rot]] 三对治 primitive 之一：context 满时 harness 智能 offload + summarize 老消息；与 [[progressive-disclosure]] / [[tool-offloading]] 平行 · #llm-architecture #context-engineering #harness-primitive
+- [[tool-offloading]] · Trivedy 命名的 [[context-rot]] 三对治 primitive 之一：大 tool 输出只留 head+tail，剩余写 fs；与 [[compaction]] / [[progressive-disclosure]] 平行 · #llm-architecture #context-engineering #harness-primitive
 
 ## Sources
 <!-- raw/ 下的原始资料，由 /ingest 自动维护 -->
@@ -100,6 +106,12 @@ Last rebuild: 2026-04-22 (Day 5, agentskills.io ingest)
 - [[journal-2026-04-19]] · my_wiki Day 2 日记：MarkitDown + QMD 实装 + 3 工具热榜发现 + 复利原则第 2 次背书 · #journal #milestone
 - [[journal-2026-04-20]] · my_wiki Day 3 日记：review-dot 插件原型（痛点→落地 24h 内）+ Harvard 四激素学习 + 用户独立到达"asked twice = failed"原则 · #journal #milestone #plugin-authoring
 - [[journal-2026-04-21]] · my_wiki Day 4 日记：harness 议题收官（3 次 ingest）+ ingest §3 预筛优化（痛点→落地 <24h 第 2 例）+ 用户独立到达"Agent = Model + Harness Engineering" + working-backwards 方法论 · #journal #milestone #harness-engineering
+- [[journal-2026-04-22]] · my_wiki Day 5 日记：[[projects/ai-zhiji\|dual-world-reciprocal-partner]] conceptual seed day（touch-count 升级首次产出 project）+ 用户独立到达 episodic vs autobiographical AI 陪伴产品分类轴 + "关系产品"类目命名 + "LLM Wiki + Hermes Agent" 架构方案 · #journal #milestone #ai-zhiji-seed
+- [[journal-2026-04-23]] · my_wiki Day 6 日记：[[projects/ai-zhiji]] formalization day（office-hours session 3 70 min 3 pivot）+ schema governance 首次到架构层（[[decisions/authored-raw-assets-extension\|raw/assets/ schema 扩展 ADR]]）+ 用户独立到达 [[iteration-by-principle]]（连续 3 日产出 framework-grade 抽象） · #journal #milestone #ai-zhiji-formalize #schema-governance
+- [[journal-2026-04-24]] · my_wiki Day 7 日记（thin day）：138 字节生活事件清单 + AI 剧本/影视 domain first mention（黄河导演）；6 日连续产出后首个非产出日 · #journal #day-7 #thin-day
+- [[journal-2026-04-25]] · my_wiki Day 8 日记：YC 双视频学习日（Diana + Tan）+ 当日 3 拆批 ingest（53+ 处变动）+ §经验 Diana "Build a Closed Loop" 3 步 framework first-person retrospective；thin-day 后回归产出节奏 · #journal #day-8 #video-learning #closed-loop
+- [[journal-2026-04-26]] · my_wiki Day 9 日记：Day 8 反刍输出日 + 橙皮书完读 + §经验独立提炼 FTS5 vs llm_wiki 4 维度对比表（RESOLVE Day 6 UNVERIFIED + 回填 [[persistent-wiki-vs-rag]]）+ §想法"实践驱动 vs 原理驱动" stance（touch=1） · #journal #day-9 #fts5-vs-llm-wiki #practice-over-principle
+- [[journal-2026-04-27]] · my_wiki Day 10 日记：**Hermes 实装日**（10 日"理论→实操"链路完成）+ Skill 5-part 结构表 + "最小权限原则"第一手体感 + Gbrain touch=3 触发升级 + §想法 4-26 stance 逐字复制（touch=2 cargo-cult 保留） · #journal #day-10 #hermes-installed #skill-structure
 - [[karpathy-autoresearch]] · Karpathy 2026-03 autoresearch repo 完整 ingest；README + program.md verbatim；skill spec 外部印证第 3 方 · #karpathy #autonomous-agent #skill-spec
 - [[karpathy-autoresearch]] · Karpathy 2026-03 autoresearch 官方 README + program.md 双文件 ingest；三独立信源（Tan / Hermes / Karpathy）收敛于"skill = markdown spec" · #karpathy #autonomous-agent #skill-spec
 - [[feel-good-hormones-series]] · Harvard Health 四+一篇：dopamine / serotonin / endorphins / oxytocin 全景 · #neuroscience #wellness
